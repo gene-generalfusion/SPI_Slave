@@ -1,0 +1,1545 @@
+TimeQuest Timing Analyzer report for spi_slave
+Mon Sep 09 00:34:01 2024
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow 1200mV 100C Model Fmax Summary
+  6. Timing Closure Recommendations
+  7. Slow 1200mV 100C Model Setup Summary
+  8. Slow 1200mV 100C Model Hold Summary
+  9. Slow 1200mV 100C Model Recovery Summary
+ 10. Slow 1200mV 100C Model Removal Summary
+ 11. Slow 1200mV 100C Model Minimum Pulse Width Summary
+ 12. Slow 1200mV 100C Model Setup: 'input_spi_clk'
+ 13. Slow 1200mV 100C Model Setup: 'clk'
+ 14. Slow 1200mV 100C Model Hold: 'clk'
+ 15. Slow 1200mV 100C Model Hold: 'input_spi_clk'
+ 16. Slow 1200mV 100C Model Metastability Summary
+ 17. Slow 1200mV -40C Model Fmax Summary
+ 18. Slow 1200mV -40C Model Setup Summary
+ 19. Slow 1200mV -40C Model Hold Summary
+ 20. Slow 1200mV -40C Model Recovery Summary
+ 21. Slow 1200mV -40C Model Removal Summary
+ 22. Slow 1200mV -40C Model Minimum Pulse Width Summary
+ 23. Slow 1200mV -40C Model Setup: 'input_spi_clk'
+ 24. Slow 1200mV -40C Model Setup: 'clk'
+ 25. Slow 1200mV -40C Model Hold: 'clk'
+ 26. Slow 1200mV -40C Model Hold: 'input_spi_clk'
+ 27. Slow 1200mV -40C Model Metastability Summary
+ 28. Fast 1200mV -40C Model Setup Summary
+ 29. Fast 1200mV -40C Model Hold Summary
+ 30. Fast 1200mV -40C Model Recovery Summary
+ 31. Fast 1200mV -40C Model Removal Summary
+ 32. Fast 1200mV -40C Model Minimum Pulse Width Summary
+ 33. Fast 1200mV -40C Model Setup: 'clk'
+ 34. Fast 1200mV -40C Model Setup: 'input_spi_clk'
+ 35. Fast 1200mV -40C Model Hold: 'clk'
+ 36. Fast 1200mV -40C Model Hold: 'input_spi_clk'
+ 37. Fast 1200mV -40C Model Metastability Summary
+ 38. Multicorner Timing Analysis Summary
+ 39. Board Trace Model Assignments
+ 40. Input Transition Times
+ 41. Signal Integrity Metrics (Slow 1200mv n40c Model)
+ 42. Signal Integrity Metrics (Slow 1200mv 100c Model)
+ 43. Signal Integrity Metrics (Fast 1200mv n40c Model)
+ 44. Setup Transfers
+ 45. Hold Transfers
+ 46. Report TCCS
+ 47. Report RSKM
+ 48. Unconstrained Paths Summary
+ 49. Clock Status Summary
+ 50. Unconstrained Input Ports
+ 51. Unconstrained Output Ports
+ 52. Unconstrained Input Ports
+ 53. Unconstrained Output Ports
+ 54. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-----------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                           ;
++-----------------------+-----------------------------------------------------+
+; Quartus Prime Version ; Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest Spectra-Q                                 ;
+; Revision Name         ; spi_slave                                           ;
+; Device Family         ; Cyclone 10 LP                                       ;
+; Device Name           ; 10CL025YU256I7G                                     ;
+; Timing Models         ; Final                                               ;
+; Delay Model           ; Combined                                            ;
+; Rise/Fall Delays      ; Enabled                                             ;
++-----------------------+-----------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.02        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.7%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                       ;
++---------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------+
+; Clock Name    ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets           ;
++---------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------+
+; clk           ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }           ;
+; input_spi_clk ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { input_spi_clk } ;
++---------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-------------------+
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 100C Model Fmax Summary                                                                          ;
++------------+-----------------+---------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name    ; Note                                                          ;
++------------+-----------------+---------------+---------------------------------------------------------------+
+; 431.41 MHz ; 250.0 MHz       ; input_spi_clk ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 451.26 MHz ; 250.0 MHz       ; clk           ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+---------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++----------------------------------------+
+; Slow 1200mV 100C Model Setup Summary   ;
++---------------+--------+---------------+
+; Clock         ; Slack  ; End Point TNS ;
++---------------+--------+---------------+
+; input_spi_clk ; -1.318 ; -24.235       ;
+; clk           ; -1.094 ; -11.821       ;
++---------------+--------+---------------+
+
+
++---------------------------------------+
+; Slow 1200mV 100C Model Hold Summary   ;
++---------------+-------+---------------+
+; Clock         ; Slack ; End Point TNS ;
++---------------+-------+---------------+
+; clk           ; 0.416 ; 0.000         ;
+; input_spi_clk ; 0.417 ; 0.000         ;
++---------------+-------+---------------+
+
+
+-------------------------------------------
+; Slow 1200mV 100C Model Recovery Summary ;
+-------------------------------------------
+No paths to report.
+
+
+------------------------------------------
+; Slow 1200mV 100C Model Removal Summary ;
+------------------------------------------
+No paths to report.
+
+
++----------------------------------------------------+
+; Slow 1200mV 100C Model Minimum Pulse Width Summary ;
++---------------+--------+---------------------------+
+; Clock         ; Slack  ; End Point TNS             ;
++---------------+--------+---------------------------+
+; input_spi_clk ; -3.000 ; -31.270                   ;
+; clk           ; -3.000 ; -24.845                   ;
++---------------+--------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 100C Model Setup: 'input_spi_clk'                                                                           ;
++--------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock  ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+; -1.318 ; byte_counter[3]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 2.245      ;
+; -1.318 ; byte_counter[3]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 2.245      ;
+; -1.318 ; byte_counter[3]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 2.245      ;
+; -1.318 ; byte_counter[3]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 2.245      ;
+; -1.318 ; byte_counter[3]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 2.245      ;
+; -1.288 ; byte_counter[3]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 2.215      ;
+; -1.234 ; mosi_en           ; byte_inbuff[6]    ; clk           ; input_spi_clk ; 1.000        ; -0.097     ; 2.115      ;
+; -1.234 ; mosi_en           ; byte_inbuff[7]    ; clk           ; input_spi_clk ; 1.000        ; -0.097     ; 2.115      ;
+; -1.234 ; mosi_en           ; byte_inbuff[0]    ; clk           ; input_spi_clk ; 1.000        ; -0.097     ; 2.115      ;
+; -1.234 ; mosi_en           ; byte_inbuff[4]    ; clk           ; input_spi_clk ; 1.000        ; -0.097     ; 2.115      ;
+; -1.234 ; mosi_en           ; byte_inbuff[1]    ; clk           ; input_spi_clk ; 1.000        ; -0.097     ; 2.115      ;
+; -1.234 ; mosi_en           ; byte_inbuff[5]    ; clk           ; input_spi_clk ; 1.000        ; -0.097     ; 2.115      ;
+; -1.234 ; mosi_en           ; byte_inbuff[3]    ; clk           ; input_spi_clk ; 1.000        ; -0.097     ; 2.115      ;
+; -1.234 ; mosi_en           ; byte_inbuff[2]    ; clk           ; input_spi_clk ; 1.000        ; -0.097     ; 2.115      ;
+; -1.173 ; mosi_en           ; shift_reg[0]      ; clk           ; input_spi_clk ; 1.000        ; -0.098     ; 2.053      ;
+; -1.173 ; mosi_en           ; spi_miso~reg0     ; clk           ; input_spi_clk ; 1.000        ; -0.098     ; 2.053      ;
+; -1.116 ; byte_outbuff[8]   ; shift_reg[0]      ; clk           ; input_spi_clk ; 1.000        ; -0.099     ; 1.995      ;
+; -1.108 ; byte_counter[4]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 2.035      ;
+; -1.108 ; byte_counter[4]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 2.035      ;
+; -1.108 ; byte_counter[4]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 2.035      ;
+; -1.108 ; byte_counter[4]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 2.035      ;
+; -1.108 ; byte_counter[4]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 2.035      ;
+; -1.096 ; tx_bit_counter[1] ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.070     ; 2.024      ;
+; -1.096 ; tx_bit_counter[1] ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.070     ; 2.024      ;
+; -1.096 ; tx_bit_counter[1] ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.070     ; 2.024      ;
+; -1.096 ; tx_bit_counter[1] ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.070     ; 2.024      ;
+; -1.096 ; tx_bit_counter[1] ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.070     ; 2.024      ;
+; -1.078 ; byte_counter[4]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 2.005      ;
+; -1.048 ; tx_bit_counter[2] ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.070     ; 1.976      ;
+; -1.048 ; tx_bit_counter[2] ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.070     ; 1.976      ;
+; -1.048 ; tx_bit_counter[2] ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.070     ; 1.976      ;
+; -1.048 ; tx_bit_counter[2] ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.070     ; 1.976      ;
+; -1.048 ; tx_bit_counter[2] ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.070     ; 1.976      ;
+; -1.009 ; send_data         ; spi_miso~reg0     ; clk           ; input_spi_clk ; 1.000        ; -0.098     ; 1.889      ;
+; -1.009 ; send_data         ; shift_reg[0]      ; clk           ; input_spi_clk ; 1.000        ; -0.098     ; 1.889      ;
+; -0.995 ; byte_counter[1]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.922      ;
+; -0.979 ; byte_counter[2]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.906      ;
+; -0.979 ; byte_counter[2]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.906      ;
+; -0.979 ; byte_counter[2]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.906      ;
+; -0.979 ; byte_counter[2]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.906      ;
+; -0.979 ; byte_counter[2]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.906      ;
+; -0.973 ; tx_bit_counter[1] ; tx_bit_counter[1] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.900      ;
+; -0.973 ; tx_bit_counter[1] ; tx_bit_counter[2] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.900      ;
+; -0.973 ; tx_bit_counter[1] ; tx_bit_counter[0] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.900      ;
+; -0.949 ; byte_counter[2]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.876      ;
+; -0.935 ; byte_outbuff[16]  ; shift_reg[0]      ; clk           ; input_spi_clk ; 1.000        ; -0.099     ; 1.814      ;
+; -0.899 ; byte_counter[1]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.826      ;
+; -0.899 ; byte_counter[1]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.826      ;
+; -0.899 ; byte_counter[1]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.826      ;
+; -0.899 ; byte_counter[1]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.826      ;
+; -0.893 ; tx_bit_counter[0] ; tx_bit_counter[2] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.820      ;
+; -0.887 ; byte_counter[0]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.814      ;
+; -0.871 ; tx_bit_counter[0] ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.070     ; 1.799      ;
+; -0.871 ; tx_bit_counter[0] ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.070     ; 1.799      ;
+; -0.871 ; tx_bit_counter[0] ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.070     ; 1.799      ;
+; -0.871 ; tx_bit_counter[0] ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.070     ; 1.799      ;
+; -0.871 ; tx_bit_counter[0] ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.070     ; 1.799      ;
+; -0.869 ; byte_counter[1]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.796      ;
+; -0.864 ; tx_bit_counter[0] ; tx_bit_counter[1] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.791      ;
+; -0.864 ; tx_bit_counter[0] ; tx_bit_counter[0] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.791      ;
+; -0.848 ; byte_counter[0]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.775      ;
+; -0.831 ; tx_bit_counter[2] ; tx_bit_counter[0] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.758      ;
+; -0.831 ; tx_bit_counter[2] ; tx_bit_counter[1] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.758      ;
+; -0.831 ; tx_bit_counter[2] ; tx_bit_counter[2] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.758      ;
+; -0.828 ; mosi_en           ; bit_counter[2]    ; clk           ; input_spi_clk ; 1.000        ; -0.097     ; 1.709      ;
+; -0.781 ; byte_outbuff[0]   ; shift_reg[0]      ; clk           ; input_spi_clk ; 1.000        ; -0.099     ; 1.660      ;
+; -0.780 ; byte_counter[0]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.707      ;
+; -0.780 ; byte_counter[0]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.707      ;
+; -0.780 ; byte_counter[0]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.707      ;
+; -0.750 ; byte_counter[0]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.677      ;
+; -0.709 ; mosi_en           ; tx_bit_counter[0] ; clk           ; input_spi_clk ; 1.000        ; -0.099     ; 1.588      ;
+; -0.709 ; mosi_en           ; tx_bit_counter[1] ; clk           ; input_spi_clk ; 1.000        ; -0.099     ; 1.588      ;
+; -0.707 ; mosi_en           ; tx_bit_counter[2] ; clk           ; input_spi_clk ; 1.000        ; -0.099     ; 1.586      ;
+; -0.689 ; mosi_en           ; bit_counter[1]    ; clk           ; input_spi_clk ; 1.000        ; -0.097     ; 1.570      ;
+; -0.666 ; mosi_en           ; bit_counter[0]    ; clk           ; input_spi_clk ; 1.000        ; -0.097     ; 1.547      ;
+; -0.657 ; send_data         ; tx_bit_counter[2] ; clk           ; input_spi_clk ; 1.000        ; -0.099     ; 1.536      ;
+; -0.651 ; send_data         ; tx_bit_counter[1] ; clk           ; input_spi_clk ; 1.000        ; -0.099     ; 1.530      ;
+; -0.417 ; send_data         ; tx_bit_counter[0] ; clk           ; input_spi_clk ; 1.000        ; -0.099     ; 1.296      ;
+; -0.399 ; bit_counter[0]    ; bit_counter[1]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.326      ;
+; -0.263 ; bit_counter[0]    ; bit_counter[2]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.190      ;
+; -0.210 ; bit_counter[0]    ; rx_done           ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.137      ;
+; -0.205 ; bit_counter[1]    ; bit_counter[2]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.132      ;
+; -0.151 ; bit_counter[2]    ; rx_done           ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 1.078      ;
+; -0.047 ; byte_inbuff[6]    ; byte_inbuff[7]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 0.974      ;
+; -0.034 ; shift_reg[0]      ; spi_miso~reg0     ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 0.961      ;
+; 0.106  ; byte_inbuff[2]    ; byte_inbuff[3]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 0.821      ;
+; 0.106  ; byte_inbuff[1]    ; byte_inbuff[2]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 0.821      ;
+; 0.107  ; byte_inbuff[3]    ; byte_inbuff[4]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 0.820      ;
+; 0.108  ; byte_inbuff[4]    ; byte_inbuff[5]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 0.819      ;
+; 0.108  ; byte_inbuff[5]    ; byte_inbuff[6]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 0.819      ;
+; 0.109  ; byte_inbuff[0]    ; byte_inbuff[1]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 0.818      ;
+; 0.118  ; bit_counter[1]    ; rx_done           ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 0.809      ;
+; 0.155  ; bit_counter[2]    ; bit_counter[2]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 0.772      ;
+; 0.155  ; bit_counter[1]    ; bit_counter[1]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 0.772      ;
+; 0.155  ; bit_counter[0]    ; bit_counter[0]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 0.772      ;
+; 0.187  ; shift_reg[0]      ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.071     ; 0.740      ;
++--------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 100C Model Setup: 'clk'                                                                                     ;
++--------+--------------------+--------------------+---------------+-------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node            ; Launch Clock  ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+--------------------+---------------+-------------+--------------+------------+------------+
+; -1.094 ; byte_inbuff[7]     ; ram_addr[0]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.000      ; 1.572      ;
+; -1.094 ; byte_inbuff[7]     ; ram_addr[5]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.000      ; 1.572      ;
+; -1.094 ; byte_inbuff[7]     ; ram_addr[4]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.000      ; 1.572      ;
+; -1.094 ; byte_inbuff[7]     ; ram_addr[3]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.000      ; 1.572      ;
+; -1.094 ; byte_inbuff[7]     ; ram_addr[2]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.000      ; 1.572      ;
+; -1.094 ; byte_inbuff[7]     ; ram_addr[1]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.000      ; 1.572      ;
+; -0.856 ; state.RECEIVE_DATA ; state.PREP_DATA    ; clk           ; clk         ; 1.000        ; -0.071     ; 1.783      ;
+; -0.675 ; state.PREP_DATA    ; state.PREP_DATA    ; clk           ; clk         ; 1.000        ; -0.071     ; 1.602      ;
+; -0.652 ; byte_inbuff[5]     ; ram_addr[5]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.000      ; 1.130      ;
+; -0.651 ; byte_inbuff[1]     ; ram_addr[1]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.000      ; 1.129      ;
+; -0.650 ; byte_inbuff[0]     ; ram_addr[0]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.000      ; 1.128      ;
+; -0.647 ; byte_inbuff[4]     ; ram_addr[4]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.000      ; 1.125      ;
+; -0.646 ; byte_inbuff[2]     ; ram_addr[2]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.000      ; 1.124      ;
+; -0.645 ; byte_inbuff[3]     ; ram_addr[3]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.000      ; 1.123      ;
+; -0.608 ; addr_set           ; cyc_cnt[0]         ; clk           ; clk         ; 0.500        ; -0.167     ; 0.939      ;
+; -0.600 ; state.IDLE         ; state.PREP_DATA    ; clk           ; clk         ; 1.000        ; -0.071     ; 1.527      ;
+; -0.588 ; state.RECEIVE_DATA ; mosi_en            ; clk           ; clk         ; 1.000        ; -0.074     ; 1.512      ;
+; -0.522 ; state.RECEIVE_DATA ; state.IDLE         ; clk           ; clk         ; 1.000        ; -0.071     ; 1.449      ;
+; -0.482 ; cyc_cnt[0]         ; byte_outbuff[8]    ; clk           ; clk         ; 1.000        ; -0.071     ; 1.409      ;
+; -0.482 ; cyc_cnt[0]         ; byte_outbuff[16]   ; clk           ; clk         ; 1.000        ; -0.071     ; 1.409      ;
+; -0.482 ; cyc_cnt[0]         ; byte_outbuff[0]    ; clk           ; clk         ; 1.000        ; -0.071     ; 1.409      ;
+; -0.400 ; cyc_cnt_done       ; state.RECEIVE_DATA ; clk           ; clk         ; 1.000        ; -0.071     ; 1.327      ;
+; -0.367 ; cyc_cnt_done       ; state.IDLE         ; clk           ; clk         ; 1.000        ; -0.071     ; 1.294      ;
+; -0.318 ; rx_done            ; addr_set           ; input_spi_clk ; clk         ; 0.500        ; -0.001     ; 0.795      ;
+; -0.288 ; state.RECEIVE_DATA ; send_data          ; clk           ; clk         ; 1.000        ; -0.074     ; 1.212      ;
+; -0.284 ; state.IDLE         ; mosi_en            ; clk           ; clk         ; 1.000        ; -0.074     ; 1.208      ;
+; -0.273 ; state.IDLE         ; state.IDLE         ; clk           ; clk         ; 1.000        ; -0.071     ; 1.200      ;
+; -0.252 ; state.PREP_DATA    ; state.RECEIVE_DATA ; clk           ; clk         ; 1.000        ; -0.071     ; 1.179      ;
+; -0.231 ; cyc_cnt[0]         ; cyc_cnt_done       ; clk           ; clk         ; 1.000        ; -0.069     ; 1.160      ;
+; -0.228 ; state.PREP_DATA    ; state.IDLE         ; clk           ; clk         ; 1.000        ; -0.071     ; 1.155      ;
+; -0.191 ; cyc_cnt_done       ; state.PREP_DATA    ; clk           ; clk         ; 1.000        ; -0.071     ; 1.118      ;
+; 0.155  ; cyc_cnt[0]         ; cyc_cnt[0]         ; clk           ; clk         ; 1.000        ; -0.071     ; 0.772      ;
+; 0.186  ; addr_set           ; addr_set           ; clk           ; clk         ; 1.000        ; -0.072     ; 0.740      ;
+; 0.187  ; send_data          ; send_data          ; clk           ; clk         ; 1.000        ; -0.071     ; 0.740      ;
+; 0.187  ; mosi_en            ; mosi_en            ; clk           ; clk         ; 1.000        ; -0.071     ; 0.740      ;
+; 0.187  ; state.RECEIVE_DATA ; state.RECEIVE_DATA ; clk           ; clk         ; 1.000        ; -0.071     ; 0.740      ;
++--------+--------------------+--------------------+---------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 100C Model Hold: 'clk'                                                                                     ;
++-------+--------------------+--------------------+---------------+-------------+--------------+------------+------------+
+; Slack ; From Node          ; To Node            ; Launch Clock  ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------+--------------------+---------------+-------------+--------------+------------+------------+
+; 0.416 ; addr_set           ; addr_set           ; clk           ; clk         ; 0.000        ; 0.072      ; 0.674      ;
+; 0.417 ; mosi_en            ; mosi_en            ; clk           ; clk         ; 0.000        ; 0.071      ; 0.674      ;
+; 0.417 ; send_data          ; send_data          ; clk           ; clk         ; 0.000        ; 0.071      ; 0.674      ;
+; 0.417 ; state.PREP_DATA    ; state.PREP_DATA    ; clk           ; clk         ; 0.000        ; 0.071      ; 0.674      ;
+; 0.417 ; state.RECEIVE_DATA ; state.RECEIVE_DATA ; clk           ; clk         ; 0.000        ; 0.071      ; 0.674      ;
+; 0.421 ; cyc_cnt[0]         ; cyc_cnt[0]         ; clk           ; clk         ; 0.000        ; 0.071      ; 0.678      ;
+; 0.668 ; state.PREP_DATA    ; state.RECEIVE_DATA ; clk           ; clk         ; 0.000        ; 0.071      ; 0.925      ;
+; 0.690 ; state.PREP_DATA    ; state.IDLE         ; clk           ; clk         ; 0.000        ; 0.071      ; 0.947      ;
+; 0.695 ; cyc_cnt_done       ; state.PREP_DATA    ; clk           ; clk         ; 0.000        ; 0.071      ; 0.952      ;
+; 0.779 ; rx_done            ; addr_set           ; input_spi_clk ; clk         ; -0.500       ; 0.193      ; 0.698      ;
+; 0.822 ; cyc_cnt[0]         ; cyc_cnt_done       ; clk           ; clk         ; 0.000        ; 0.073      ; 1.081      ;
+; 0.825 ; state.IDLE         ; state.IDLE         ; clk           ; clk         ; 0.000        ; 0.071      ; 1.082      ;
+; 0.846 ; cyc_cnt_done       ; state.RECEIVE_DATA ; clk           ; clk         ; 0.000        ; 0.071      ; 1.103      ;
+; 0.850 ; cyc_cnt_done       ; state.IDLE         ; clk           ; clk         ; 0.000        ; 0.071      ; 1.107      ;
+; 0.887 ; state.RECEIVE_DATA ; send_data          ; clk           ; clk         ; 0.000        ; 0.068      ; 1.141      ;
+; 0.890 ; state.IDLE         ; mosi_en            ; clk           ; clk         ; 0.000        ; 0.068      ; 1.144      ;
+; 0.954 ; state.IDLE         ; state.PREP_DATA    ; clk           ; clk         ; 0.000        ; 0.071      ; 1.211      ;
+; 1.089 ; byte_inbuff[5]     ; ram_addr[5]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.194      ; 1.009      ;
+; 1.092 ; byte_inbuff[3]     ; ram_addr[3]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.194      ; 1.012      ;
+; 1.095 ; byte_inbuff[2]     ; ram_addr[2]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.194      ; 1.015      ;
+; 1.096 ; byte_inbuff[0]     ; ram_addr[0]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.194      ; 1.016      ;
+; 1.096 ; byte_inbuff[4]     ; ram_addr[4]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.194      ; 1.016      ;
+; 1.097 ; byte_inbuff[1]     ; ram_addr[1]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.194      ; 1.017      ;
+; 1.101 ; state.RECEIVE_DATA ; state.IDLE         ; clk           ; clk         ; 0.000        ; 0.071      ; 1.358      ;
+; 1.116 ; state.RECEIVE_DATA ; mosi_en            ; clk           ; clk         ; 0.000        ; 0.068      ; 1.370      ;
+; 1.181 ; addr_set           ; cyc_cnt[0]         ; clk           ; clk         ; -0.500       ; -0.023     ; 0.864      ;
+; 1.213 ; cyc_cnt[0]         ; byte_outbuff[8]    ; clk           ; clk         ; 0.000        ; 0.071      ; 1.470      ;
+; 1.213 ; cyc_cnt[0]         ; byte_outbuff[0]    ; clk           ; clk         ; 0.000        ; 0.071      ; 1.470      ;
+; 1.213 ; cyc_cnt[0]         ; byte_outbuff[16]   ; clk           ; clk         ; 0.000        ; 0.071      ; 1.470      ;
+; 1.425 ; state.RECEIVE_DATA ; state.PREP_DATA    ; clk           ; clk         ; 0.000        ; 0.071      ; 1.682      ;
+; 1.684 ; byte_inbuff[7]     ; ram_addr[5]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.194      ; 1.604      ;
+; 1.684 ; byte_inbuff[7]     ; ram_addr[4]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.194      ; 1.604      ;
+; 1.684 ; byte_inbuff[7]     ; ram_addr[3]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.194      ; 1.604      ;
+; 1.684 ; byte_inbuff[7]     ; ram_addr[0]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.194      ; 1.604      ;
+; 1.684 ; byte_inbuff[7]     ; ram_addr[2]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.194      ; 1.604      ;
+; 1.684 ; byte_inbuff[7]     ; ram_addr[1]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.194      ; 1.604      ;
++-------+--------------------+--------------------+---------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV 100C Model Hold: 'input_spi_clk'                                                                           ;
++-------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock  ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+; 0.417 ; tx_bit_counter[1] ; tx_bit_counter[1] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.674      ;
+; 0.417 ; bit_counter[2]    ; bit_counter[2]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.674      ;
+; 0.417 ; tx_bit_counter[2] ; tx_bit_counter[2] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.674      ;
+; 0.417 ; shift_reg[0]      ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.674      ;
+; 0.417 ; bit_counter[0]    ; bit_counter[0]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.674      ;
+; 0.417 ; bit_counter[1]    ; bit_counter[1]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.674      ;
+; 0.417 ; tx_bit_counter[0] ; tx_bit_counter[0] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.674      ;
+; 0.448 ; bit_counter[1]    ; rx_done           ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.705      ;
+; 0.463 ; byte_inbuff[0]    ; byte_inbuff[1]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.720      ;
+; 0.464 ; byte_inbuff[4]    ; byte_inbuff[5]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.721      ;
+; 0.464 ; byte_inbuff[5]    ; byte_inbuff[6]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.721      ;
+; 0.465 ; byte_inbuff[2]    ; byte_inbuff[3]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.722      ;
+; 0.465 ; byte_inbuff[3]    ; byte_inbuff[4]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.722      ;
+; 0.466 ; byte_inbuff[1]    ; byte_inbuff[2]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.723      ;
+; 0.570 ; shift_reg[0]      ; spi_miso~reg0     ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.827      ;
+; 0.615 ; byte_inbuff[6]    ; byte_inbuff[7]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.872      ;
+; 0.615 ; byte_counter[4]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.872      ;
+; 0.653 ; bit_counter[2]    ; rx_done           ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.910      ;
+; 0.658 ; byte_counter[3]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.915      ;
+; 0.661 ; byte_counter[2]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.918      ;
+; 0.673 ; byte_counter[1]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.930      ;
+; 0.693 ; byte_counter[0]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.950      ;
+; 0.732 ; bit_counter[1]    ; bit_counter[2]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 0.989      ;
+; 0.765 ; bit_counter[0]    ; rx_done           ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.022      ;
+; 0.799 ; bit_counter[0]    ; bit_counter[2]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.056      ;
+; 0.839 ; send_data         ; tx_bit_counter[0] ; clk           ; input_spi_clk ; 0.000        ; 0.095      ; 1.160      ;
+; 0.904 ; bit_counter[0]    ; bit_counter[1]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.161      ;
+; 0.914 ; byte_counter[0]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.171      ;
+; 0.977 ; byte_counter[3]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.234      ;
+; 0.992 ; byte_counter[2]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.249      ;
+; 0.992 ; byte_counter[1]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.249      ;
+; 0.996 ; byte_counter[2]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.253      ;
+; 1.000 ; byte_counter[0]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.257      ;
+; 1.004 ; byte_counter[0]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.261      ;
+; 1.026 ; byte_counter[2]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.283      ;
+; 1.027 ; send_data         ; tx_bit_counter[1] ; clk           ; input_spi_clk ; 0.000        ; 0.095      ; 1.348      ;
+; 1.032 ; send_data         ; tx_bit_counter[2] ; clk           ; input_spi_clk ; 0.000        ; 0.095      ; 1.353      ;
+; 1.040 ; byte_counter[1]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.297      ;
+; 1.053 ; mosi_en           ; tx_bit_counter[0] ; clk           ; input_spi_clk ; 0.000        ; 0.095      ; 1.374      ;
+; 1.053 ; mosi_en           ; tx_bit_counter[1] ; clk           ; input_spi_clk ; 0.000        ; 0.095      ; 1.374      ;
+; 1.053 ; mosi_en           ; tx_bit_counter[2] ; clk           ; input_spi_clk ; 0.000        ; 0.095      ; 1.374      ;
+; 1.056 ; mosi_en           ; bit_counter[0]    ; clk           ; input_spi_clk ; 0.000        ; 0.097      ; 1.379      ;
+; 1.097 ; mosi_en           ; bit_counter[1]    ; clk           ; input_spi_clk ; 0.000        ; 0.097      ; 1.420      ;
+; 1.116 ; byte_counter[1]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.373      ;
+; 1.120 ; byte_counter[1]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.377      ;
+; 1.128 ; byte_counter[0]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.385      ;
+; 1.132 ; byte_counter[0]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.389      ;
+; 1.155 ; byte_outbuff[0]   ; shift_reg[0]      ; clk           ; input_spi_clk ; 0.000        ; 0.095      ; 1.476      ;
+; 1.166 ; byte_counter[4]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.423      ;
+; 1.220 ; tx_bit_counter[0] ; tx_bit_counter[1] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.477      ;
+; 1.281 ; tx_bit_counter[2] ; tx_bit_counter[0] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.538      ;
+; 1.281 ; tx_bit_counter[0] ; tx_bit_counter[2] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.538      ;
+; 1.286 ; mosi_en           ; bit_counter[2]    ; clk           ; input_spi_clk ; 0.000        ; 0.097      ; 1.609      ;
+; 1.306 ; tx_bit_counter[2] ; tx_bit_counter[1] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.563      ;
+; 1.308 ; tx_bit_counter[1] ; tx_bit_counter[2] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.565      ;
+; 1.340 ; byte_counter[3]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.597      ;
+; 1.344 ; tx_bit_counter[1] ; tx_bit_counter[0] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.601      ;
+; 1.365 ; byte_outbuff[16]  ; shift_reg[0]      ; clk           ; input_spi_clk ; 0.000        ; 0.095      ; 1.686      ;
+; 1.395 ; byte_counter[1]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.652      ;
+; 1.492 ; byte_outbuff[8]   ; shift_reg[0]      ; clk           ; input_spi_clk ; 0.000        ; 0.095      ; 1.813      ;
+; 1.526 ; byte_counter[2]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.783      ;
+; 1.526 ; byte_counter[2]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.783      ;
+; 1.591 ; send_data         ; shift_reg[0]      ; clk           ; input_spi_clk ; 0.000        ; 0.096      ; 1.913      ;
+; 1.591 ; send_data         ; spi_miso~reg0     ; clk           ; input_spi_clk ; 0.000        ; 0.096      ; 1.913      ;
+; 1.597 ; tx_bit_counter[0] ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.072      ; 1.855      ;
+; 1.597 ; tx_bit_counter[0] ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.072      ; 1.855      ;
+; 1.597 ; tx_bit_counter[0] ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.072      ; 1.855      ;
+; 1.597 ; tx_bit_counter[0] ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.072      ; 1.855      ;
+; 1.597 ; tx_bit_counter[0] ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.072      ; 1.855      ;
+; 1.666 ; byte_counter[4]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.923      ;
+; 1.666 ; byte_counter[4]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.923      ;
+; 1.666 ; byte_counter[4]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.923      ;
+; 1.666 ; byte_counter[4]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 1.923      ;
+; 1.698 ; mosi_en           ; shift_reg[0]      ; clk           ; input_spi_clk ; 0.000        ; 0.096      ; 2.020      ;
+; 1.698 ; mosi_en           ; spi_miso~reg0     ; clk           ; input_spi_clk ; 0.000        ; 0.096      ; 2.020      ;
+; 1.738 ; tx_bit_counter[2] ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.072      ; 1.996      ;
+; 1.738 ; tx_bit_counter[2] ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.072      ; 1.996      ;
+; 1.738 ; tx_bit_counter[2] ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.072      ; 1.996      ;
+; 1.738 ; tx_bit_counter[2] ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.072      ; 1.996      ;
+; 1.738 ; tx_bit_counter[2] ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.072      ; 1.996      ;
+; 1.799 ; tx_bit_counter[1] ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.072      ; 2.057      ;
+; 1.799 ; tx_bit_counter[1] ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.072      ; 2.057      ;
+; 1.799 ; tx_bit_counter[1] ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.072      ; 2.057      ;
+; 1.799 ; tx_bit_counter[1] ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.072      ; 2.057      ;
+; 1.799 ; tx_bit_counter[1] ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.072      ; 2.057      ;
+; 1.840 ; byte_counter[3]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 2.097      ;
+; 1.840 ; byte_counter[3]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 2.097      ;
+; 1.840 ; byte_counter[3]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.071      ; 2.097      ;
+; 1.842 ; mosi_en           ; byte_inbuff[3]    ; clk           ; input_spi_clk ; 0.000        ; 0.097      ; 2.165      ;
+; 1.842 ; mosi_en           ; byte_inbuff[5]    ; clk           ; input_spi_clk ; 0.000        ; 0.097      ; 2.165      ;
+; 1.842 ; mosi_en           ; byte_inbuff[4]    ; clk           ; input_spi_clk ; 0.000        ; 0.097      ; 2.165      ;
+; 1.842 ; mosi_en           ; byte_inbuff[2]    ; clk           ; input_spi_clk ; 0.000        ; 0.097      ; 2.165      ;
+; 1.842 ; mosi_en           ; byte_inbuff[1]    ; clk           ; input_spi_clk ; 0.000        ; 0.097      ; 2.165      ;
+; 1.842 ; mosi_en           ; byte_inbuff[6]    ; clk           ; input_spi_clk ; 0.000        ; 0.097      ; 2.165      ;
+; 1.842 ; mosi_en           ; byte_inbuff[7]    ; clk           ; input_spi_clk ; 0.000        ; 0.097      ; 2.165      ;
+; 1.842 ; mosi_en           ; byte_inbuff[0]    ; clk           ; input_spi_clk ; 0.000        ; 0.097      ; 2.165      ;
++-------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+
+
+------------------------------------------------
+; Slow 1200mV 100C Model Metastability Summary ;
+------------------------------------------------
+No synchronizer chains to report.
+
+
++--------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV -40C Model Fmax Summary                                                                          ;
++------------+-----------------+---------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name    ; Note                                                          ;
++------------+-----------------+---------------+---------------------------------------------------------------+
+; 490.2 MHz  ; 250.0 MHz       ; input_spi_clk ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 527.98 MHz ; 250.0 MHz       ; clk           ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+---------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++----------------------------------------+
+; Slow 1200mV -40C Model Setup Summary   ;
++---------------+--------+---------------+
+; Clock         ; Slack  ; End Point TNS ;
++---------------+--------+---------------+
+; input_spi_clk ; -1.040 ; -19.098       ;
+; clk           ; -0.937 ; -9.068        ;
++---------------+--------+---------------+
+
+
++---------------------------------------+
+; Slow 1200mV -40C Model Hold Summary   ;
++---------------+-------+---------------+
+; Clock         ; Slack ; End Point TNS ;
++---------------+-------+---------------+
+; clk           ; 0.343 ; 0.000         ;
+; input_spi_clk ; 0.343 ; 0.000         ;
++---------------+-------+---------------+
+
+
+-------------------------------------------
+; Slow 1200mV -40C Model Recovery Summary ;
+-------------------------------------------
+No paths to report.
+
+
+------------------------------------------
+; Slow 1200mV -40C Model Removal Summary ;
+------------------------------------------
+No paths to report.
+
+
++----------------------------------------------------+
+; Slow 1200mV -40C Model Minimum Pulse Width Summary ;
++---------------+--------+---------------------------+
+; Clock         ; Slack  ; End Point TNS             ;
++---------------+--------+---------------------------+
+; input_spi_clk ; -3.000 ; -31.270                   ;
+; clk           ; -3.000 ; -24.845                   ;
++---------------+--------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV -40C Model Setup: 'input_spi_clk'                                                                           ;
++--------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock  ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+; -1.040 ; byte_counter[3]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.978      ;
+; -1.040 ; byte_counter[3]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.978      ;
+; -1.040 ; byte_counter[3]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.978      ;
+; -1.040 ; byte_counter[3]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.978      ;
+; -1.040 ; byte_counter[3]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.978      ;
+; -1.031 ; mosi_en           ; byte_inbuff[6]    ; clk           ; input_spi_clk ; 1.000        ; -0.082     ; 1.929      ;
+; -1.031 ; mosi_en           ; byte_inbuff[5]    ; clk           ; input_spi_clk ; 1.000        ; -0.082     ; 1.929      ;
+; -1.031 ; mosi_en           ; byte_inbuff[4]    ; clk           ; input_spi_clk ; 1.000        ; -0.082     ; 1.929      ;
+; -1.031 ; mosi_en           ; byte_inbuff[1]    ; clk           ; input_spi_clk ; 1.000        ; -0.082     ; 1.929      ;
+; -1.031 ; mosi_en           ; byte_inbuff[3]    ; clk           ; input_spi_clk ; 1.000        ; -0.082     ; 1.929      ;
+; -1.031 ; mosi_en           ; byte_inbuff[7]    ; clk           ; input_spi_clk ; 1.000        ; -0.082     ; 1.929      ;
+; -1.031 ; mosi_en           ; byte_inbuff[0]    ; clk           ; input_spi_clk ; 1.000        ; -0.082     ; 1.929      ;
+; -1.031 ; mosi_en           ; byte_inbuff[2]    ; clk           ; input_spi_clk ; 1.000        ; -0.082     ; 1.929      ;
+; -0.968 ; byte_counter[3]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.906      ;
+; -0.947 ; mosi_en           ; shift_reg[0]      ; clk           ; input_spi_clk ; 1.000        ; -0.083     ; 1.844      ;
+; -0.947 ; mosi_en           ; spi_miso~reg0     ; clk           ; input_spi_clk ; 1.000        ; -0.083     ; 1.844      ;
+; -0.875 ; tx_bit_counter[1] ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.813      ;
+; -0.875 ; tx_bit_counter[1] ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.813      ;
+; -0.875 ; tx_bit_counter[1] ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.813      ;
+; -0.875 ; tx_bit_counter[1] ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.813      ;
+; -0.875 ; tx_bit_counter[1] ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.813      ;
+; -0.873 ; byte_counter[4]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.811      ;
+; -0.873 ; byte_counter[4]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.811      ;
+; -0.873 ; byte_counter[4]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.811      ;
+; -0.873 ; byte_counter[4]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.811      ;
+; -0.873 ; byte_counter[4]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.811      ;
+; -0.845 ; byte_outbuff[8]   ; shift_reg[0]      ; clk           ; input_spi_clk ; 1.000        ; -0.084     ; 1.741      ;
+; -0.816 ; tx_bit_counter[2] ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.754      ;
+; -0.816 ; tx_bit_counter[2] ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.754      ;
+; -0.816 ; tx_bit_counter[2] ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.754      ;
+; -0.816 ; tx_bit_counter[2] ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.754      ;
+; -0.816 ; tx_bit_counter[2] ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.754      ;
+; -0.801 ; byte_counter[4]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.739      ;
+; -0.788 ; send_data         ; shift_reg[0]      ; clk           ; input_spi_clk ; 1.000        ; -0.083     ; 1.685      ;
+; -0.788 ; send_data         ; spi_miso~reg0     ; clk           ; input_spi_clk ; 1.000        ; -0.083     ; 1.685      ;
+; -0.760 ; byte_counter[2]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.698      ;
+; -0.760 ; byte_counter[2]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.698      ;
+; -0.760 ; byte_counter[2]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.698      ;
+; -0.760 ; byte_counter[2]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.698      ;
+; -0.760 ; byte_counter[2]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.698      ;
+; -0.708 ; tx_bit_counter[1] ; tx_bit_counter[1] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.063     ; 1.645      ;
+; -0.708 ; tx_bit_counter[1] ; tx_bit_counter[2] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.063     ; 1.645      ;
+; -0.708 ; tx_bit_counter[1] ; tx_bit_counter[0] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.063     ; 1.645      ;
+; -0.704 ; byte_outbuff[16]  ; shift_reg[0]      ; clk           ; input_spi_clk ; 1.000        ; -0.084     ; 1.600      ;
+; -0.696 ; byte_counter[1]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.634      ;
+; -0.689 ; tx_bit_counter[0] ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.627      ;
+; -0.689 ; tx_bit_counter[0] ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.627      ;
+; -0.689 ; tx_bit_counter[0] ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.627      ;
+; -0.689 ; tx_bit_counter[0] ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.627      ;
+; -0.689 ; tx_bit_counter[0] ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.627      ;
+; -0.688 ; byte_counter[2]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.626      ;
+; -0.663 ; byte_counter[1]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.601      ;
+; -0.663 ; byte_counter[1]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.601      ;
+; -0.663 ; byte_counter[1]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.601      ;
+; -0.663 ; byte_counter[1]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.601      ;
+; -0.629 ; tx_bit_counter[0] ; tx_bit_counter[2] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.063     ; 1.566      ;
+; -0.628 ; tx_bit_counter[0] ; tx_bit_counter[0] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.063     ; 1.565      ;
+; -0.628 ; tx_bit_counter[0] ; tx_bit_counter[1] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.063     ; 1.565      ;
+; -0.624 ; mosi_en           ; bit_counter[2]    ; clk           ; input_spi_clk ; 1.000        ; -0.082     ; 1.522      ;
+; -0.609 ; byte_counter[0]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.547      ;
+; -0.602 ; byte_counter[0]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.540      ;
+; -0.594 ; tx_bit_counter[2] ; tx_bit_counter[0] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.063     ; 1.531      ;
+; -0.594 ; tx_bit_counter[2] ; tx_bit_counter[2] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.063     ; 1.531      ;
+; -0.594 ; tx_bit_counter[2] ; tx_bit_counter[1] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.063     ; 1.531      ;
+; -0.591 ; byte_counter[1]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.529      ;
+; -0.574 ; byte_counter[0]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.512      ;
+; -0.574 ; byte_counter[0]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.512      ;
+; -0.574 ; byte_counter[0]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.512      ;
+; -0.558 ; byte_outbuff[0]   ; shift_reg[0]      ; clk           ; input_spi_clk ; 1.000        ; -0.084     ; 1.454      ;
+; -0.502 ; byte_counter[0]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.440      ;
+; -0.482 ; mosi_en           ; bit_counter[1]    ; clk           ; input_spi_clk ; 1.000        ; -0.082     ; 1.380      ;
+; -0.467 ; mosi_en           ; tx_bit_counter[0] ; clk           ; input_spi_clk ; 1.000        ; -0.084     ; 1.363      ;
+; -0.467 ; mosi_en           ; tx_bit_counter[2] ; clk           ; input_spi_clk ; 1.000        ; -0.084     ; 1.363      ;
+; -0.466 ; mosi_en           ; tx_bit_counter[1] ; clk           ; input_spi_clk ; 1.000        ; -0.084     ; 1.362      ;
+; -0.463 ; mosi_en           ; bit_counter[0]    ; clk           ; input_spi_clk ; 1.000        ; -0.082     ; 1.361      ;
+; -0.437 ; send_data         ; tx_bit_counter[2] ; clk           ; input_spi_clk ; 1.000        ; -0.084     ; 1.333      ;
+; -0.431 ; send_data         ; tx_bit_counter[1] ; clk           ; input_spi_clk ; 1.000        ; -0.084     ; 1.327      ;
+; -0.213 ; send_data         ; tx_bit_counter[0] ; clk           ; input_spi_clk ; 1.000        ; -0.084     ; 1.109      ;
+; -0.197 ; bit_counter[0]    ; bit_counter[1]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.135      ;
+; -0.112 ; bit_counter[0]    ; bit_counter[2]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 1.050      ;
+; -0.042 ; bit_counter[0]    ; rx_done           ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 0.980      ;
+; -0.031 ; bit_counter[1]    ; bit_counter[2]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 0.969      ;
+; 0.017  ; bit_counter[2]    ; rx_done           ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 0.921      ;
+; 0.078  ; byte_inbuff[6]    ; byte_inbuff[7]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.063     ; 0.859      ;
+; 0.106  ; shift_reg[0]      ; spi_miso~reg0     ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 0.832      ;
+; 0.230  ; byte_inbuff[1]    ; byte_inbuff[2]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.063     ; 0.707      ;
+; 0.232  ; byte_inbuff[2]    ; byte_inbuff[3]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.063     ; 0.705      ;
+; 0.233  ; byte_inbuff[3]    ; byte_inbuff[4]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.063     ; 0.704      ;
+; 0.234  ; byte_inbuff[0]    ; byte_inbuff[1]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.063     ; 0.703      ;
+; 0.234  ; byte_inbuff[5]    ; byte_inbuff[6]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.063     ; 0.703      ;
+; 0.234  ; byte_inbuff[4]    ; byte_inbuff[5]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.063     ; 0.703      ;
+; 0.243  ; bit_counter[1]    ; rx_done           ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 0.695      ;
+; 0.276  ; bit_counter[1]    ; bit_counter[1]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 0.662      ;
+; 0.276  ; bit_counter[2]    ; bit_counter[2]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 0.662      ;
+; 0.276  ; bit_counter[0]    ; bit_counter[0]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 0.662      ;
+; 0.300  ; shift_reg[0]      ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.062     ; 0.638      ;
++--------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV -40C Model Setup: 'clk'                                                                                     ;
++--------+--------------------+--------------------+---------------+-------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node            ; Launch Clock  ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+--------------------+---------------+-------------+--------------+------------+------------+
+; -0.937 ; byte_inbuff[7]     ; ram_addr[0]~reg0   ; input_spi_clk ; clk         ; 0.500        ; -0.020     ; 1.397      ;
+; -0.937 ; byte_inbuff[7]     ; ram_addr[5]~reg0   ; input_spi_clk ; clk         ; 0.500        ; -0.020     ; 1.397      ;
+; -0.937 ; byte_inbuff[7]     ; ram_addr[4]~reg0   ; input_spi_clk ; clk         ; 0.500        ; -0.020     ; 1.397      ;
+; -0.937 ; byte_inbuff[7]     ; ram_addr[3]~reg0   ; input_spi_clk ; clk         ; 0.500        ; -0.020     ; 1.397      ;
+; -0.937 ; byte_inbuff[7]     ; ram_addr[2]~reg0   ; input_spi_clk ; clk         ; 0.500        ; -0.020     ; 1.397      ;
+; -0.937 ; byte_inbuff[7]     ; ram_addr[1]~reg0   ; input_spi_clk ; clk         ; 0.500        ; -0.020     ; 1.397      ;
+; -0.625 ; state.RECEIVE_DATA ; state.PREP_DATA    ; clk           ; clk         ; 1.000        ; -0.063     ; 1.562      ;
+; -0.513 ; byte_inbuff[1]     ; ram_addr[1]~reg0   ; input_spi_clk ; clk         ; 0.500        ; -0.020     ; 0.973      ;
+; -0.512 ; byte_inbuff[5]     ; ram_addr[5]~reg0   ; input_spi_clk ; clk         ; 0.500        ; -0.020     ; 0.972      ;
+; -0.512 ; byte_inbuff[0]     ; ram_addr[0]~reg0   ; input_spi_clk ; clk         ; 0.500        ; -0.020     ; 0.972      ;
+; -0.509 ; byte_inbuff[4]     ; ram_addr[4]~reg0   ; input_spi_clk ; clk         ; 0.500        ; -0.020     ; 0.969      ;
+; -0.508 ; byte_inbuff[3]     ; ram_addr[3]~reg0   ; input_spi_clk ; clk         ; 0.500        ; -0.020     ; 0.968      ;
+; -0.508 ; byte_inbuff[2]     ; ram_addr[2]~reg0   ; input_spi_clk ; clk         ; 0.500        ; -0.020     ; 0.968      ;
+; -0.449 ; state.PREP_DATA    ; state.PREP_DATA    ; clk           ; clk         ; 1.000        ; -0.063     ; 1.386      ;
+; -0.447 ; addr_set           ; cyc_cnt[0]         ; clk           ; clk         ; 0.500        ; -0.124     ; 0.823      ;
+; -0.399 ; state.RECEIVE_DATA ; mosi_en            ; clk           ; clk         ; 1.000        ; -0.065     ; 1.334      ;
+; -0.374 ; state.IDLE         ; state.PREP_DATA    ; clk           ; clk         ; 1.000        ; -0.063     ; 1.311      ;
+; -0.343 ; state.RECEIVE_DATA ; state.IDLE         ; clk           ; clk         ; 1.000        ; -0.063     ; 1.280      ;
+; -0.321 ; cyc_cnt[0]         ; byte_outbuff[0]    ; clk           ; clk         ; 1.000        ; -0.063     ; 1.258      ;
+; -0.321 ; cyc_cnt[0]         ; byte_outbuff[8]    ; clk           ; clk         ; 1.000        ; -0.063     ; 1.258      ;
+; -0.321 ; cyc_cnt[0]         ; byte_outbuff[16]   ; clk           ; clk         ; 1.000        ; -0.063     ; 1.258      ;
+; -0.224 ; rx_done            ; addr_set           ; input_spi_clk ; clk         ; 0.500        ; -0.020     ; 0.684      ;
+; -0.195 ; cyc_cnt_done       ; state.RECEIVE_DATA ; clk           ; clk         ; 1.000        ; -0.063     ; 1.132      ;
+; -0.165 ; cyc_cnt_done       ; state.IDLE         ; clk           ; clk         ; 1.000        ; -0.063     ; 1.102      ;
+; -0.158 ; state.IDLE         ; mosi_en            ; clk           ; clk         ; 1.000        ; -0.065     ; 1.093      ;
+; -0.151 ; state.RECEIVE_DATA ; send_data          ; clk           ; clk         ; 1.000        ; -0.065     ; 1.086      ;
+; -0.099 ; cyc_cnt[0]         ; cyc_cnt_done       ; clk           ; clk         ; 1.000        ; -0.062     ; 1.037      ;
+; -0.092 ; state.IDLE         ; state.IDLE         ; clk           ; clk         ; 1.000        ; -0.063     ; 1.029      ;
+; -0.072 ; state.PREP_DATA    ; state.RECEIVE_DATA ; clk           ; clk         ; 1.000        ; -0.063     ; 1.009      ;
+; -0.051 ; state.PREP_DATA    ; state.IDLE         ; clk           ; clk         ; 1.000        ; -0.063     ; 0.988      ;
+; -0.017 ; cyc_cnt_done       ; state.PREP_DATA    ; clk           ; clk         ; 1.000        ; -0.063     ; 0.954      ;
+; 0.275  ; cyc_cnt[0]         ; cyc_cnt[0]         ; clk           ; clk         ; 1.000        ; -0.063     ; 0.662      ;
+; 0.299  ; state.RECEIVE_DATA ; state.RECEIVE_DATA ; clk           ; clk         ; 1.000        ; -0.063     ; 0.638      ;
+; 0.299  ; send_data          ; send_data          ; clk           ; clk         ; 1.000        ; -0.063     ; 0.638      ;
+; 0.299  ; mosi_en            ; mosi_en            ; clk           ; clk         ; 1.000        ; -0.063     ; 0.638      ;
+; 0.302  ; addr_set           ; addr_set           ; clk           ; clk         ; 1.000        ; -0.060     ; 0.638      ;
++--------+--------------------+--------------------+---------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV -40C Model Hold: 'clk'                                                                                     ;
++-------+--------------------+--------------------+---------------+-------------+--------------+------------+------------+
+; Slack ; From Node          ; To Node            ; Launch Clock  ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------+--------------------+---------------+-------------+--------------+------------+------------+
+; 0.343 ; mosi_en            ; mosi_en            ; clk           ; clk         ; 0.000        ; 0.063      ; 0.574      ;
+; 0.343 ; send_data          ; send_data          ; clk           ; clk         ; 0.000        ; 0.063      ; 0.574      ;
+; 0.343 ; state.PREP_DATA    ; state.PREP_DATA    ; clk           ; clk         ; 0.000        ; 0.063      ; 0.574      ;
+; 0.343 ; state.RECEIVE_DATA ; state.RECEIVE_DATA ; clk           ; clk         ; 0.000        ; 0.063      ; 0.574      ;
+; 0.346 ; addr_set           ; addr_set           ; clk           ; clk         ; 0.000        ; 0.060      ; 0.574      ;
+; 0.357 ; cyc_cnt[0]         ; cyc_cnt[0]         ; clk           ; clk         ; 0.000        ; 0.063      ; 0.588      ;
+; 0.591 ; state.PREP_DATA    ; state.RECEIVE_DATA ; clk           ; clk         ; 0.000        ; 0.063      ; 0.822      ;
+; 0.607 ; state.PREP_DATA    ; state.IDLE         ; clk           ; clk         ; 0.000        ; 0.063      ; 0.838      ;
+; 0.609 ; cyc_cnt_done       ; state.PREP_DATA    ; clk           ; clk         ; 0.000        ; 0.063      ; 0.840      ;
+; 0.700 ; cyc_cnt[0]         ; cyc_cnt_done       ; clk           ; clk         ; 0.000        ; 0.064      ; 0.932      ;
+; 0.741 ; state.IDLE         ; mosi_en            ; clk           ; clk         ; 0.000        ; 0.061      ; 0.970      ;
+; 0.742 ; state.IDLE         ; state.IDLE         ; clk           ; clk         ; 0.000        ; 0.063      ; 0.973      ;
+; 0.747 ; state.RECEIVE_DATA ; send_data          ; clk           ; clk         ; 0.000        ; 0.061      ; 0.976      ;
+; 0.763 ; cyc_cnt_done       ; state.RECEIVE_DATA ; clk           ; clk         ; 0.000        ; 0.063      ; 0.994      ;
+; 0.765 ; cyc_cnt_done       ; state.IDLE         ; clk           ; clk         ; 0.000        ; 0.063      ; 0.996      ;
+; 0.775 ; rx_done            ; addr_set           ; input_spi_clk ; clk         ; -0.500       ; 0.144      ; 0.627      ;
+; 0.818 ; state.IDLE         ; state.PREP_DATA    ; clk           ; clk         ; 0.000        ; 0.063      ; 1.049      ;
+; 0.965 ; state.RECEIVE_DATA ; mosi_en            ; clk           ; clk         ; 0.000        ; 0.061      ; 1.194      ;
+; 0.969 ; state.RECEIVE_DATA ; state.IDLE         ; clk           ; clk         ; 0.000        ; 0.063      ; 1.200      ;
+; 1.059 ; byte_inbuff[5]     ; ram_addr[5]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.145      ; 0.912      ;
+; 1.061 ; byte_inbuff[3]     ; ram_addr[3]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.145      ; 0.914      ;
+; 1.062 ; byte_inbuff[2]     ; ram_addr[2]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.145      ; 0.915      ;
+; 1.063 ; byte_inbuff[4]     ; ram_addr[4]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.145      ; 0.916      ;
+; 1.064 ; byte_inbuff[0]     ; ram_addr[0]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.145      ; 0.917      ;
+; 1.065 ; byte_inbuff[1]     ; ram_addr[1]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.145      ; 0.918      ;
+; 1.067 ; addr_set           ; cyc_cnt[0]         ; clk           ; clk         ; -0.500       ; 0.001      ; 0.756      ;
+; 1.081 ; cyc_cnt[0]         ; byte_outbuff[0]    ; clk           ; clk         ; 0.000        ; 0.063      ; 1.312      ;
+; 1.081 ; cyc_cnt[0]         ; byte_outbuff[8]    ; clk           ; clk         ; 0.000        ; 0.063      ; 1.312      ;
+; 1.081 ; cyc_cnt[0]         ; byte_outbuff[16]   ; clk           ; clk         ; 0.000        ; 0.063      ; 1.312      ;
+; 1.248 ; state.RECEIVE_DATA ; state.PREP_DATA    ; clk           ; clk         ; 0.000        ; 0.063      ; 1.479      ;
+; 1.557 ; byte_inbuff[7]     ; ram_addr[0]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.145      ; 1.410      ;
+; 1.557 ; byte_inbuff[7]     ; ram_addr[1]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.145      ; 1.410      ;
+; 1.557 ; byte_inbuff[7]     ; ram_addr[2]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.145      ; 1.410      ;
+; 1.557 ; byte_inbuff[7]     ; ram_addr[5]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.145      ; 1.410      ;
+; 1.557 ; byte_inbuff[7]     ; ram_addr[4]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.145      ; 1.410      ;
+; 1.557 ; byte_inbuff[7]     ; ram_addr[3]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.145      ; 1.410      ;
++-------+--------------------+--------------------+---------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Slow 1200mV -40C Model Hold: 'input_spi_clk'                                                                           ;
++-------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock  ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+; 0.343 ; tx_bit_counter[1] ; tx_bit_counter[1] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 0.574      ;
+; 0.343 ; tx_bit_counter[2] ; tx_bit_counter[2] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 0.574      ;
+; 0.343 ; tx_bit_counter[0] ; tx_bit_counter[0] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 0.574      ;
+; 0.344 ; bit_counter[2]    ; bit_counter[2]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 0.574      ;
+; 0.344 ; shift_reg[0]      ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 0.574      ;
+; 0.344 ; bit_counter[0]    ; bit_counter[0]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 0.574      ;
+; 0.344 ; bit_counter[1]    ; bit_counter[1]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 0.574      ;
+; 0.404 ; bit_counter[1]    ; rx_done           ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 0.634      ;
+; 0.414 ; byte_inbuff[0]    ; byte_inbuff[1]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 0.645      ;
+; 0.415 ; byte_inbuff[3]    ; byte_inbuff[4]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 0.646      ;
+; 0.415 ; byte_inbuff[4]    ; byte_inbuff[5]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 0.646      ;
+; 0.415 ; byte_inbuff[5]    ; byte_inbuff[6]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 0.646      ;
+; 0.416 ; byte_inbuff[1]    ; byte_inbuff[2]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 0.647      ;
+; 0.416 ; byte_inbuff[2]    ; byte_inbuff[3]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 0.647      ;
+; 0.508 ; shift_reg[0]      ; spi_miso~reg0     ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 0.738      ;
+; 0.546 ; byte_inbuff[6]    ; byte_inbuff[7]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 0.777      ;
+; 0.549 ; byte_counter[4]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 0.779      ;
+; 0.579 ; bit_counter[2]    ; rx_done           ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 0.809      ;
+; 0.586 ; byte_counter[3]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 0.816      ;
+; 0.587 ; byte_counter[2]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 0.817      ;
+; 0.600 ; byte_counter[1]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 0.830      ;
+; 0.613 ; byte_counter[0]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 0.843      ;
+; 0.648 ; bit_counter[1]    ; bit_counter[2]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 0.878      ;
+; 0.690 ; bit_counter[0]    ; bit_counter[2]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 0.920      ;
+; 0.693 ; bit_counter[0]    ; rx_done           ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 0.923      ;
+; 0.747 ; send_data         ; tx_bit_counter[0] ; clk           ; input_spi_clk ; 0.000        ; 0.082      ; 1.037      ;
+; 0.796 ; byte_counter[0]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.026      ;
+; 0.811 ; bit_counter[0]    ; bit_counter[1]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.041      ;
+; 0.863 ; byte_counter[2]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.093      ;
+; 0.864 ; byte_counter[3]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.094      ;
+; 0.871 ; byte_counter[0]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.101      ;
+; 0.877 ; byte_counter[2]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.107      ;
+; 0.878 ; byte_counter[1]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.108      ;
+; 0.879 ; send_data         ; tx_bit_counter[1] ; clk           ; input_spi_clk ; 0.000        ; 0.082      ; 1.169      ;
+; 0.882 ; byte_counter[2]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.112      ;
+; 0.884 ; send_data         ; tx_bit_counter[2] ; clk           ; input_spi_clk ; 0.000        ; 0.082      ; 1.174      ;
+; 0.885 ; byte_counter[0]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.115      ;
+; 0.899 ; mosi_en           ; bit_counter[0]    ; clk           ; input_spi_clk ; 0.000        ; 0.083      ; 1.190      ;
+; 0.915 ; byte_counter[1]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.145      ;
+; 0.924 ; mosi_en           ; tx_bit_counter[0] ; clk           ; input_spi_clk ; 0.000        ; 0.082      ; 1.214      ;
+; 0.924 ; mosi_en           ; tx_bit_counter[1] ; clk           ; input_spi_clk ; 0.000        ; 0.082      ; 1.214      ;
+; 0.924 ; mosi_en           ; tx_bit_counter[2] ; clk           ; input_spi_clk ; 0.000        ; 0.082      ; 1.214      ;
+; 0.968 ; byte_counter[1]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.198      ;
+; 0.975 ; byte_counter[0]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.205      ;
+; 0.977 ; mosi_en           ; bit_counter[1]    ; clk           ; input_spi_clk ; 0.000        ; 0.083      ; 1.268      ;
+; 0.982 ; byte_counter[1]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.212      ;
+; 0.988 ; byte_outbuff[0]   ; shift_reg[0]      ; clk           ; input_spi_clk ; 0.000        ; 0.081      ; 1.277      ;
+; 0.989 ; byte_counter[0]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.219      ;
+; 1.003 ; byte_counter[4]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.233      ;
+; 1.053 ; tx_bit_counter[0] ; tx_bit_counter[1] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.284      ;
+; 1.119 ; mosi_en           ; bit_counter[2]    ; clk           ; input_spi_clk ; 0.000        ; 0.083      ; 1.410      ;
+; 1.130 ; tx_bit_counter[2] ; tx_bit_counter[0] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.361      ;
+; 1.137 ; tx_bit_counter[0] ; tx_bit_counter[2] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.368      ;
+; 1.156 ; tx_bit_counter[2] ; tx_bit_counter[1] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.387      ;
+; 1.162 ; byte_counter[3]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.392      ;
+; 1.168 ; tx_bit_counter[1] ; tx_bit_counter[2] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.399      ;
+; 1.190 ; byte_outbuff[16]  ; shift_reg[0]      ; clk           ; input_spi_clk ; 0.000        ; 0.081      ; 1.479      ;
+; 1.195 ; tx_bit_counter[1] ; tx_bit_counter[0] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.426      ;
+; 1.260 ; byte_counter[1]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.490      ;
+; 1.282 ; byte_outbuff[8]   ; shift_reg[0]      ; clk           ; input_spi_clk ; 0.000        ; 0.081      ; 1.571      ;
+; 1.367 ; byte_counter[2]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.597      ;
+; 1.367 ; byte_counter[2]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.597      ;
+; 1.400 ; tx_bit_counter[0] ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.631      ;
+; 1.400 ; tx_bit_counter[0] ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.631      ;
+; 1.400 ; tx_bit_counter[0] ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.631      ;
+; 1.400 ; tx_bit_counter[0] ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.631      ;
+; 1.400 ; tx_bit_counter[0] ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.631      ;
+; 1.413 ; send_data         ; spi_miso~reg0     ; clk           ; input_spi_clk ; 0.000        ; 0.082      ; 1.703      ;
+; 1.413 ; send_data         ; shift_reg[0]      ; clk           ; input_spi_clk ; 0.000        ; 0.082      ; 1.703      ;
+; 1.488 ; byte_counter[4]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.718      ;
+; 1.488 ; byte_counter[4]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.718      ;
+; 1.488 ; byte_counter[4]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.718      ;
+; 1.488 ; byte_counter[4]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.718      ;
+; 1.494 ; mosi_en           ; shift_reg[0]      ; clk           ; input_spi_clk ; 0.000        ; 0.082      ; 1.784      ;
+; 1.494 ; mosi_en           ; spi_miso~reg0     ; clk           ; input_spi_clk ; 0.000        ; 0.082      ; 1.784      ;
+; 1.549 ; tx_bit_counter[2] ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.780      ;
+; 1.549 ; tx_bit_counter[2] ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.780      ;
+; 1.549 ; tx_bit_counter[2] ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.780      ;
+; 1.549 ; tx_bit_counter[2] ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.780      ;
+; 1.549 ; tx_bit_counter[2] ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.780      ;
+; 1.584 ; tx_bit_counter[1] ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.815      ;
+; 1.584 ; tx_bit_counter[1] ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.815      ;
+; 1.584 ; tx_bit_counter[1] ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.815      ;
+; 1.584 ; tx_bit_counter[1] ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.815      ;
+; 1.584 ; tx_bit_counter[1] ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.063      ; 1.815      ;
+; 1.587 ; mosi_en           ; byte_inbuff[3]    ; clk           ; input_spi_clk ; 0.000        ; 0.084      ; 1.879      ;
+; 1.587 ; mosi_en           ; byte_inbuff[1]    ; clk           ; input_spi_clk ; 0.000        ; 0.084      ; 1.879      ;
+; 1.587 ; mosi_en           ; byte_inbuff[2]    ; clk           ; input_spi_clk ; 0.000        ; 0.084      ; 1.879      ;
+; 1.587 ; mosi_en           ; byte_inbuff[0]    ; clk           ; input_spi_clk ; 0.000        ; 0.084      ; 1.879      ;
+; 1.587 ; mosi_en           ; byte_inbuff[4]    ; clk           ; input_spi_clk ; 0.000        ; 0.084      ; 1.879      ;
+; 1.587 ; mosi_en           ; byte_inbuff[6]    ; clk           ; input_spi_clk ; 0.000        ; 0.084      ; 1.879      ;
+; 1.587 ; mosi_en           ; byte_inbuff[7]    ; clk           ; input_spi_clk ; 0.000        ; 0.084      ; 1.879      ;
+; 1.587 ; mosi_en           ; byte_inbuff[5]    ; clk           ; input_spi_clk ; 0.000        ; 0.084      ; 1.879      ;
+; 1.647 ; byte_counter[3]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.877      ;
+; 1.647 ; byte_counter[3]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.877      ;
+; 1.647 ; byte_counter[3]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.062      ; 1.877      ;
++-------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+
+
+------------------------------------------------
+; Slow 1200mV -40C Model Metastability Summary ;
+------------------------------------------------
+No synchronizer chains to report.
+
+
++----------------------------------------+
+; Fast 1200mV -40C Model Setup Summary   ;
++---------------+--------+---------------+
+; Clock         ; Slack  ; End Point TNS ;
++---------------+--------+---------------+
+; clk           ; -0.358 ; -0.358        ;
+; input_spi_clk ; -0.066 ; -0.802        ;
++---------------+--------+---------------+
+
+
++---------------------------------------+
+; Fast 1200mV -40C Model Hold Summary   ;
++---------------+-------+---------------+
+; Clock         ; Slack ; End Point TNS ;
++---------------+-------+---------------+
+; clk           ; 0.179 ; 0.000         ;
+; input_spi_clk ; 0.179 ; 0.000         ;
++---------------+-------+---------------+
+
+
+-------------------------------------------
+; Fast 1200mV -40C Model Recovery Summary ;
+-------------------------------------------
+No paths to report.
+
+
+------------------------------------------
+; Fast 1200mV -40C Model Removal Summary ;
+------------------------------------------
+No paths to report.
+
+
++----------------------------------------------------+
+; Fast 1200mV -40C Model Minimum Pulse Width Summary ;
++---------------+--------+---------------------------+
+; Clock         ; Slack  ; End Point TNS             ;
++---------------+--------+---------------------------+
+; input_spi_clk ; -3.000 ; -26.562                   ;
+; clk           ; -3.000 ; -21.476                   ;
++---------------+--------+---------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV -40C Model Setup: 'clk'                                                                                     ;
++--------+--------------------+--------------------+---------------+-------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node            ; Launch Clock  ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+--------------------+---------------+-------------+--------------+------------+------------+
+; -0.358 ; addr_set           ; cyc_cnt[0]         ; clk           ; clk         ; 0.500        ; -0.415     ; 0.431      ;
+; 0.090  ; byte_inbuff[7]     ; ram_addr[0]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.331      ; 0.709      ;
+; 0.090  ; byte_inbuff[7]     ; ram_addr[5]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.331      ; 0.709      ;
+; 0.090  ; byte_inbuff[7]     ; ram_addr[4]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.331      ; 0.709      ;
+; 0.090  ; byte_inbuff[7]     ; ram_addr[3]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.331      ; 0.709      ;
+; 0.090  ; byte_inbuff[7]     ; ram_addr[2]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.331      ; 0.709      ;
+; 0.090  ; byte_inbuff[7]     ; ram_addr[1]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.331      ; 0.709      ;
+; 0.157  ; state.RECEIVE_DATA ; state.PREP_DATA    ; clk           ; clk         ; 1.000        ; -0.035     ; 0.796      ;
+; 0.217  ; state.PREP_DATA    ; state.PREP_DATA    ; clk           ; clk         ; 1.000        ; -0.035     ; 0.736      ;
+; 0.247  ; state.RECEIVE_DATA ; mosi_en            ; clk           ; clk         ; 1.000        ; -0.037     ; 0.704      ;
+; 0.255  ; state.IDLE         ; state.PREP_DATA    ; clk           ; clk         ; 1.000        ; -0.035     ; 0.698      ;
+; 0.282  ; byte_inbuff[1]     ; ram_addr[1]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.331      ; 0.517      ;
+; 0.283  ; byte_inbuff[5]     ; ram_addr[5]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.331      ; 0.516      ;
+; 0.283  ; byte_inbuff[0]     ; ram_addr[0]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.331      ; 0.516      ;
+; 0.286  ; byte_inbuff[4]     ; ram_addr[4]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.331      ; 0.513      ;
+; 0.287  ; byte_inbuff[3]     ; ram_addr[3]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.331      ; 0.512      ;
+; 0.287  ; byte_inbuff[2]     ; ram_addr[2]~reg0   ; input_spi_clk ; clk         ; 0.500        ; 0.331      ; 0.512      ;
+; 0.305  ; cyc_cnt[0]         ; byte_outbuff[0]    ; clk           ; clk         ; 1.000        ; -0.035     ; 0.648      ;
+; 0.305  ; cyc_cnt[0]         ; byte_outbuff[16]   ; clk           ; clk         ; 1.000        ; -0.035     ; 0.648      ;
+; 0.305  ; cyc_cnt[0]         ; byte_outbuff[8]    ; clk           ; clk         ; 1.000        ; -0.035     ; 0.648      ;
+; 0.311  ; state.RECEIVE_DATA ; state.IDLE         ; clk           ; clk         ; 1.000        ; -0.035     ; 0.642      ;
+; 0.342  ; cyc_cnt_done       ; state.RECEIVE_DATA ; clk           ; clk         ; 1.000        ; -0.035     ; 0.611      ;
+; 0.355  ; cyc_cnt_done       ; state.IDLE         ; clk           ; clk         ; 1.000        ; -0.035     ; 0.598      ;
+; 0.380  ; state.RECEIVE_DATA ; send_data          ; clk           ; clk         ; 1.000        ; -0.037     ; 0.571      ;
+; 0.384  ; state.IDLE         ; mosi_en            ; clk           ; clk         ; 1.000        ; -0.037     ; 0.567      ;
+; 0.406  ; state.IDLE         ; state.IDLE         ; clk           ; clk         ; 1.000        ; -0.035     ; 0.547      ;
+; 0.410  ; cyc_cnt[0]         ; cyc_cnt_done       ; clk           ; clk         ; 1.000        ; -0.034     ; 0.544      ;
+; 0.418  ; state.PREP_DATA    ; state.RECEIVE_DATA ; clk           ; clk         ; 1.000        ; -0.035     ; 0.535      ;
+; 0.428  ; state.PREP_DATA    ; state.IDLE         ; clk           ; clk         ; 1.000        ; -0.035     ; 0.525      ;
+; 0.442  ; rx_done            ; addr_set           ; input_spi_clk ; clk         ; 0.500        ; 0.332      ; 0.358      ;
+; 0.448  ; cyc_cnt_done       ; state.PREP_DATA    ; clk           ; clk         ; 1.000        ; -0.035     ; 0.505      ;
+; 0.608  ; cyc_cnt[0]         ; cyc_cnt[0]         ; clk           ; clk         ; 1.000        ; -0.035     ; 0.345      ;
+; 0.618  ; mosi_en            ; mosi_en            ; clk           ; clk         ; 1.000        ; -0.035     ; 0.335      ;
+; 0.618  ; state.RECEIVE_DATA ; state.RECEIVE_DATA ; clk           ; clk         ; 1.000        ; -0.035     ; 0.335      ;
+; 0.618  ; send_data          ; send_data          ; clk           ; clk         ; 1.000        ; -0.035     ; 0.335      ;
+; 0.618  ; addr_set           ; addr_set           ; clk           ; clk         ; 1.000        ; -0.035     ; 0.335      ;
++--------+--------------------+--------------------+---------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV -40C Model Setup: 'input_spi_clk'                                                                           ;
++--------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+; Slack  ; From Node         ; To Node           ; Launch Clock  ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++--------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+; -0.066 ; mosi_en           ; byte_inbuff[6]    ; clk           ; input_spi_clk ; 1.000        ; -0.046     ; 0.988      ;
+; -0.066 ; mosi_en           ; byte_inbuff[7]    ; clk           ; input_spi_clk ; 1.000        ; -0.046     ; 0.988      ;
+; -0.066 ; mosi_en           ; byte_inbuff[0]    ; clk           ; input_spi_clk ; 1.000        ; -0.046     ; 0.988      ;
+; -0.066 ; mosi_en           ; byte_inbuff[1]    ; clk           ; input_spi_clk ; 1.000        ; -0.046     ; 0.988      ;
+; -0.066 ; mosi_en           ; byte_inbuff[2]    ; clk           ; input_spi_clk ; 1.000        ; -0.046     ; 0.988      ;
+; -0.066 ; mosi_en           ; byte_inbuff[3]    ; clk           ; input_spi_clk ; 1.000        ; -0.046     ; 0.988      ;
+; -0.066 ; mosi_en           ; byte_inbuff[4]    ; clk           ; input_spi_clk ; 1.000        ; -0.046     ; 0.988      ;
+; -0.066 ; mosi_en           ; byte_inbuff[5]    ; clk           ; input_spi_clk ; 1.000        ; -0.046     ; 0.988      ;
+; -0.054 ; byte_counter[3]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 1.007      ;
+; -0.044 ; byte_counter[3]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.997      ;
+; -0.044 ; byte_counter[3]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.997      ;
+; -0.044 ; byte_counter[3]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.997      ;
+; -0.044 ; byte_counter[3]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.997      ;
+; -0.044 ; byte_counter[3]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.997      ;
+; 0.002  ; byte_outbuff[8]   ; shift_reg[0]      ; clk           ; input_spi_clk ; 1.000        ; -0.049     ; 0.917      ;
+; 0.015  ; mosi_en           ; shift_reg[0]      ; clk           ; input_spi_clk ; 1.000        ; -0.048     ; 0.905      ;
+; 0.015  ; mosi_en           ; spi_miso~reg0     ; clk           ; input_spi_clk ; 1.000        ; -0.048     ; 0.905      ;
+; 0.024  ; tx_bit_counter[1] ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.929      ;
+; 0.024  ; tx_bit_counter[1] ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.929      ;
+; 0.024  ; tx_bit_counter[1] ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.929      ;
+; 0.024  ; tx_bit_counter[1] ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.929      ;
+; 0.024  ; tx_bit_counter[1] ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.929      ;
+; 0.044  ; send_data         ; spi_miso~reg0     ; clk           ; input_spi_clk ; 1.000        ; -0.048     ; 0.876      ;
+; 0.044  ; send_data         ; shift_reg[0]      ; clk           ; input_spi_clk ; 1.000        ; -0.048     ; 0.876      ;
+; 0.048  ; tx_bit_counter[2] ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.905      ;
+; 0.048  ; tx_bit_counter[2] ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.905      ;
+; 0.048  ; tx_bit_counter[2] ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.905      ;
+; 0.048  ; tx_bit_counter[2] ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.905      ;
+; 0.048  ; tx_bit_counter[2] ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.905      ;
+; 0.054  ; byte_counter[4]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.899      ;
+; 0.064  ; byte_counter[4]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.889      ;
+; 0.064  ; byte_counter[4]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.889      ;
+; 0.064  ; byte_counter[4]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.889      ;
+; 0.064  ; byte_counter[4]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.889      ;
+; 0.064  ; byte_counter[4]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.889      ;
+; 0.085  ; byte_counter[1]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.868      ;
+; 0.088  ; byte_outbuff[16]  ; shift_reg[0]      ; clk           ; input_spi_clk ; 1.000        ; -0.049     ; 0.831      ;
+; 0.095  ; tx_bit_counter[1] ; tx_bit_counter[1] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.858      ;
+; 0.095  ; tx_bit_counter[1] ; tx_bit_counter[2] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.858      ;
+; 0.095  ; tx_bit_counter[1] ; tx_bit_counter[0] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.858      ;
+; 0.109  ; byte_counter[2]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.844      ;
+; 0.119  ; byte_counter[2]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.834      ;
+; 0.119  ; byte_counter[2]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.834      ;
+; 0.119  ; byte_counter[2]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.834      ;
+; 0.119  ; byte_counter[2]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.834      ;
+; 0.119  ; byte_counter[2]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.834      ;
+; 0.123  ; tx_bit_counter[0] ; tx_bit_counter[2] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.830      ;
+; 0.126  ; tx_bit_counter[0] ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.827      ;
+; 0.126  ; tx_bit_counter[0] ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.827      ;
+; 0.126  ; tx_bit_counter[0] ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.827      ;
+; 0.126  ; tx_bit_counter[0] ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.827      ;
+; 0.126  ; tx_bit_counter[0] ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.827      ;
+; 0.129  ; byte_counter[1]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.824      ;
+; 0.135  ; byte_counter[0]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.818      ;
+; 0.139  ; byte_counter[1]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.814      ;
+; 0.139  ; byte_counter[1]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.814      ;
+; 0.139  ; byte_counter[1]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.814      ;
+; 0.139  ; byte_counter[1]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.814      ;
+; 0.141  ; mosi_en           ; bit_counter[2]    ; clk           ; input_spi_clk ; 1.000        ; -0.047     ; 0.780      ;
+; 0.152  ; tx_bit_counter[0] ; tx_bit_counter[0] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.801      ;
+; 0.152  ; tx_bit_counter[0] ; tx_bit_counter[1] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.801      ;
+; 0.156  ; tx_bit_counter[2] ; tx_bit_counter[2] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.797      ;
+; 0.156  ; tx_bit_counter[2] ; tx_bit_counter[1] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.797      ;
+; 0.156  ; tx_bit_counter[2] ; tx_bit_counter[0] ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.797      ;
+; 0.160  ; byte_outbuff[0]   ; shift_reg[0]      ; clk           ; input_spi_clk ; 1.000        ; -0.049     ; 0.759      ;
+; 0.173  ; byte_counter[0]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.780      ;
+; 0.188  ; mosi_en           ; bit_counter[1]    ; clk           ; input_spi_clk ; 1.000        ; -0.047     ; 0.733      ;
+; 0.191  ; byte_counter[0]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.762      ;
+; 0.199  ; byte_counter[0]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.754      ;
+; 0.199  ; mosi_en           ; tx_bit_counter[2] ; clk           ; input_spi_clk ; 1.000        ; -0.048     ; 0.721      ;
+; 0.200  ; mosi_en           ; tx_bit_counter[1] ; clk           ; input_spi_clk ; 1.000        ; -0.048     ; 0.720      ;
+; 0.200  ; mosi_en           ; tx_bit_counter[0] ; clk           ; input_spi_clk ; 1.000        ; -0.048     ; 0.720      ;
+; 0.201  ; byte_counter[0]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.752      ;
+; 0.201  ; byte_counter[0]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.752      ;
+; 0.201  ; mosi_en           ; bit_counter[0]    ; clk           ; input_spi_clk ; 1.000        ; -0.047     ; 0.720      ;
+; 0.220  ; send_data         ; tx_bit_counter[2] ; clk           ; input_spi_clk ; 1.000        ; -0.048     ; 0.700      ;
+; 0.226  ; send_data         ; tx_bit_counter[1] ; clk           ; input_spi_clk ; 1.000        ; -0.048     ; 0.694      ;
+; 0.328  ; send_data         ; tx_bit_counter[0] ; clk           ; input_spi_clk ; 1.000        ; -0.048     ; 0.592      ;
+; 0.344  ; bit_counter[0]    ; bit_counter[1]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.609      ;
+; 0.425  ; bit_counter[0]    ; bit_counter[2]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.528      ;
+; 0.433  ; bit_counter[0]    ; rx_done           ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.520      ;
+; 0.444  ; bit_counter[1]    ; bit_counter[2]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.509      ;
+; 0.464  ; bit_counter[2]    ; rx_done           ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.489      ;
+; 0.520  ; shift_reg[0]      ; spi_miso~reg0     ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.433      ;
+; 0.528  ; byte_inbuff[6]    ; byte_inbuff[7]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.425      ;
+; 0.580  ; byte_inbuff[1]    ; byte_inbuff[2]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.373      ;
+; 0.581  ; byte_inbuff[2]    ; byte_inbuff[3]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.372      ;
+; 0.582  ; byte_inbuff[3]    ; byte_inbuff[4]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.371      ;
+; 0.583  ; byte_inbuff[4]    ; byte_inbuff[5]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.370      ;
+; 0.584  ; byte_inbuff[0]    ; byte_inbuff[1]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.369      ;
+; 0.584  ; byte_inbuff[5]    ; byte_inbuff[6]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.369      ;
+; 0.588  ; bit_counter[1]    ; rx_done           ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.365      ;
+; 0.608  ; bit_counter[2]    ; bit_counter[2]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.345      ;
+; 0.608  ; bit_counter[1]    ; bit_counter[1]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.345      ;
+; 0.608  ; bit_counter[0]    ; bit_counter[0]    ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.345      ;
+; 0.618  ; shift_reg[0]      ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 1.000        ; -0.035     ; 0.335      ;
++--------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV -40C Model Hold: 'clk'                                                                                     ;
++-------+--------------------+--------------------+---------------+-------------+--------------+------------+------------+
+; Slack ; From Node          ; To Node            ; Launch Clock  ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------+--------------------+---------------+-------------+--------------+------------+------------+
+; 0.179 ; addr_set           ; addr_set           ; clk           ; clk         ; 0.000        ; 0.035      ; 0.296      ;
+; 0.179 ; mosi_en            ; mosi_en            ; clk           ; clk         ; 0.000        ; 0.035      ; 0.296      ;
+; 0.179 ; send_data          ; send_data          ; clk           ; clk         ; 0.000        ; 0.035      ; 0.296      ;
+; 0.179 ; state.PREP_DATA    ; state.PREP_DATA    ; clk           ; clk         ; 0.000        ; 0.035      ; 0.296      ;
+; 0.179 ; state.RECEIVE_DATA ; state.RECEIVE_DATA ; clk           ; clk         ; 0.000        ; 0.035      ; 0.296      ;
+; 0.183 ; cyc_cnt[0]         ; cyc_cnt[0]         ; clk           ; clk         ; 0.000        ; 0.035      ; 0.300      ;
+; 0.251 ; rx_done            ; addr_set           ; input_spi_clk ; clk         ; -0.500       ; 0.428      ; 0.301      ;
+; 0.287 ; state.PREP_DATA    ; state.RECEIVE_DATA ; clk           ; clk         ; 0.000        ; 0.035      ; 0.404      ;
+; 0.297 ; cyc_cnt_done       ; state.PREP_DATA    ; clk           ; clk         ; 0.000        ; 0.035      ; 0.414      ;
+; 0.297 ; state.PREP_DATA    ; state.IDLE         ; clk           ; clk         ; 0.000        ; 0.035      ; 0.414      ;
+; 0.347 ; cyc_cnt[0]         ; cyc_cnt_done       ; clk           ; clk         ; 0.000        ; 0.036      ; 0.465      ;
+; 0.349 ; state.IDLE         ; state.IDLE         ; clk           ; clk         ; 0.000        ; 0.035      ; 0.466      ;
+; 0.358 ; cyc_cnt_done       ; state.RECEIVE_DATA ; clk           ; clk         ; 0.000        ; 0.035      ; 0.475      ;
+; 0.359 ; cyc_cnt_done       ; state.IDLE         ; clk           ; clk         ; 0.000        ; 0.035      ; 0.476      ;
+; 0.370 ; state.IDLE         ; mosi_en            ; clk           ; clk         ; 0.000        ; 0.033      ; 0.485      ;
+; 0.372 ; state.RECEIVE_DATA ; send_data          ; clk           ; clk         ; 0.000        ; 0.033      ; 0.487      ;
+; 0.381 ; byte_inbuff[5]     ; ram_addr[5]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.428      ; 0.431      ;
+; 0.382 ; byte_inbuff[3]     ; ram_addr[3]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.428      ; 0.432      ;
+; 0.383 ; byte_inbuff[4]     ; ram_addr[4]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.428      ; 0.433      ;
+; 0.383 ; byte_inbuff[2]     ; ram_addr[2]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.428      ; 0.433      ;
+; 0.385 ; byte_inbuff[0]     ; ram_addr[0]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.428      ; 0.435      ;
+; 0.386 ; byte_inbuff[1]     ; ram_addr[1]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.428      ; 0.436      ;
+; 0.437 ; state.IDLE         ; state.PREP_DATA    ; clk           ; clk         ; 0.000        ; 0.035      ; 0.554      ;
+; 0.473 ; state.RECEIVE_DATA ; mosi_en            ; clk           ; clk         ; 0.000        ; 0.033      ; 0.588      ;
+; 0.480 ; state.RECEIVE_DATA ; state.IDLE         ; clk           ; clk         ; 0.000        ; 0.035      ; 0.597      ;
+; 0.529 ; cyc_cnt[0]         ; byte_outbuff[8]    ; clk           ; clk         ; 0.000        ; 0.035      ; 0.646      ;
+; 0.529 ; cyc_cnt[0]         ; byte_outbuff[0]    ; clk           ; clk         ; 0.000        ; 0.035      ; 0.646      ;
+; 0.529 ; cyc_cnt[0]         ; byte_outbuff[16]   ; clk           ; clk         ; 0.000        ; 0.035      ; 0.646      ;
+; 0.631 ; state.RECEIVE_DATA ; state.PREP_DATA    ; clk           ; clk         ; 0.000        ; 0.035      ; 0.748      ;
+; 0.669 ; byte_inbuff[7]     ; ram_addr[1]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.428      ; 0.719      ;
+; 0.669 ; byte_inbuff[7]     ; ram_addr[3]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.428      ; 0.719      ;
+; 0.669 ; byte_inbuff[7]     ; ram_addr[2]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.428      ; 0.719      ;
+; 0.669 ; byte_inbuff[7]     ; ram_addr[0]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.428      ; 0.719      ;
+; 0.669 ; byte_inbuff[7]     ; ram_addr[5]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.428      ; 0.719      ;
+; 0.669 ; byte_inbuff[7]     ; ram_addr[4]~reg0   ; input_spi_clk ; clk         ; -0.500       ; 0.428      ; 0.719      ;
+; 1.110 ; addr_set           ; cyc_cnt[0]         ; clk           ; clk         ; -0.500       ; -0.345     ; 0.367      ;
++-------+--------------------+--------------------+---------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Fast 1200mV -40C Model Hold: 'input_spi_clk'                                                                           ;
++-------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+; Slack ; From Node         ; To Node           ; Launch Clock  ; Latch Clock   ; Relationship ; Clock Skew ; Data Delay ;
++-------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+; 0.179 ; tx_bit_counter[1] ; tx_bit_counter[1] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.296      ;
+; 0.179 ; bit_counter[2]    ; bit_counter[2]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.296      ;
+; 0.179 ; tx_bit_counter[2] ; tx_bit_counter[2] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.296      ;
+; 0.179 ; shift_reg[0]      ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.296      ;
+; 0.179 ; bit_counter[0]    ; bit_counter[0]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.296      ;
+; 0.179 ; bit_counter[1]    ; bit_counter[1]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.296      ;
+; 0.179 ; tx_bit_counter[0] ; tx_bit_counter[0] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.296      ;
+; 0.188 ; bit_counter[1]    ; rx_done           ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.305      ;
+; 0.195 ; byte_inbuff[0]    ; byte_inbuff[1]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.312      ;
+; 0.195 ; byte_inbuff[4]    ; byte_inbuff[5]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.312      ;
+; 0.195 ; byte_inbuff[5]    ; byte_inbuff[6]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.312      ;
+; 0.196 ; byte_inbuff[3]    ; byte_inbuff[4]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.313      ;
+; 0.197 ; byte_inbuff[1]    ; byte_inbuff[2]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.314      ;
+; 0.197 ; byte_inbuff[2]    ; byte_inbuff[3]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.314      ;
+; 0.242 ; shift_reg[0]      ; spi_miso~reg0     ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.359      ;
+; 0.259 ; byte_inbuff[6]    ; byte_inbuff[7]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.376      ;
+; 0.260 ; byte_counter[4]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.377      ;
+; 0.278 ; bit_counter[2]    ; rx_done           ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.395      ;
+; 0.282 ; byte_counter[3]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.399      ;
+; 0.282 ; byte_counter[2]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.399      ;
+; 0.289 ; byte_counter[1]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.406      ;
+; 0.296 ; byte_counter[0]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.413      ;
+; 0.313 ; bit_counter[1]    ; bit_counter[2]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.430      ;
+; 0.321 ; bit_counter[0]    ; rx_done           ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.438      ;
+; 0.329 ; send_data         ; tx_bit_counter[0] ; clk           ; input_spi_clk ; 0.000        ; 0.048      ; 0.499      ;
+; 0.357 ; bit_counter[0]    ; bit_counter[2]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.474      ;
+; 0.385 ; bit_counter[0]    ; bit_counter[1]    ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.502      ;
+; 0.393 ; byte_counter[0]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.510      ;
+; 0.413 ; send_data         ; tx_bit_counter[1] ; clk           ; input_spi_clk ; 0.000        ; 0.048      ; 0.583      ;
+; 0.419 ; send_data         ; tx_bit_counter[2] ; clk           ; input_spi_clk ; 0.000        ; 0.048      ; 0.589      ;
+; 0.424 ; mosi_en           ; bit_counter[0]    ; clk           ; input_spi_clk ; 0.000        ; 0.049      ; 0.595      ;
+; 0.426 ; byte_counter[3]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.543      ;
+; 0.430 ; mosi_en           ; tx_bit_counter[0] ; clk           ; input_spi_clk ; 0.000        ; 0.048      ; 0.600      ;
+; 0.430 ; mosi_en           ; tx_bit_counter[1] ; clk           ; input_spi_clk ; 0.000        ; 0.048      ; 0.600      ;
+; 0.430 ; mosi_en           ; tx_bit_counter[2] ; clk           ; input_spi_clk ; 0.000        ; 0.048      ; 0.600      ;
+; 0.433 ; byte_counter[1]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.550      ;
+; 0.435 ; byte_counter[2]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.552      ;
+; 0.437 ; byte_counter[2]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.554      ;
+; 0.438 ; byte_counter[0]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.555      ;
+; 0.440 ; byte_counter[0]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.557      ;
+; 0.443 ; byte_counter[1]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.560      ;
+; 0.446 ; mosi_en           ; bit_counter[1]    ; clk           ; input_spi_clk ; 0.000        ; 0.049      ; 0.617      ;
+; 0.456 ; byte_outbuff[0]   ; shift_reg[0]      ; clk           ; input_spi_clk ; 0.000        ; 0.047      ; 0.625      ;
+; 0.461 ; byte_counter[2]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.578      ;
+; 0.491 ; byte_counter[1]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.608      ;
+; 0.493 ; byte_counter[1]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.610      ;
+; 0.498 ; byte_counter[0]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.615      ;
+; 0.500 ; byte_counter[0]   ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.617      ;
+; 0.518 ; byte_counter[4]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.635      ;
+; 0.524 ; tx_bit_counter[0] ; tx_bit_counter[1] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.641      ;
+; 0.536 ; mosi_en           ; bit_counter[2]    ; clk           ; input_spi_clk ; 0.000        ; 0.049      ; 0.707      ;
+; 0.545 ; byte_outbuff[16]  ; shift_reg[0]      ; clk           ; input_spi_clk ; 0.000        ; 0.047      ; 0.714      ;
+; 0.547 ; tx_bit_counter[2] ; tx_bit_counter[0] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.664      ;
+; 0.556 ; tx_bit_counter[0] ; tx_bit_counter[2] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.673      ;
+; 0.563 ; tx_bit_counter[2] ; tx_bit_counter[1] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.680      ;
+; 0.565 ; tx_bit_counter[1] ; tx_bit_counter[2] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.682      ;
+; 0.581 ; tx_bit_counter[1] ; tx_bit_counter[0] ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.698      ;
+; 0.591 ; byte_counter[3]   ; shift_reg[0]      ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.708      ;
+; 0.598 ; byte_counter[1]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.715      ;
+; 0.602 ; byte_outbuff[8]   ; shift_reg[0]      ; clk           ; input_spi_clk ; 0.000        ; 0.047      ; 0.771      ;
+; 0.663 ; byte_counter[2]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.780      ;
+; 0.663 ; byte_counter[2]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.780      ;
+; 0.667 ; send_data         ; shift_reg[0]      ; clk           ; input_spi_clk ; 0.000        ; 0.048      ; 0.837      ;
+; 0.667 ; send_data         ; spi_miso~reg0     ; clk           ; input_spi_clk ; 0.000        ; 0.048      ; 0.837      ;
+; 0.691 ; tx_bit_counter[0] ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.808      ;
+; 0.691 ; tx_bit_counter[0] ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.808      ;
+; 0.691 ; tx_bit_counter[0] ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.808      ;
+; 0.691 ; tx_bit_counter[0] ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.808      ;
+; 0.691 ; tx_bit_counter[0] ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.808      ;
+; 0.720 ; byte_counter[4]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.837      ;
+; 0.720 ; byte_counter[4]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.837      ;
+; 0.720 ; byte_counter[4]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.837      ;
+; 0.720 ; byte_counter[4]   ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.837      ;
+; 0.750 ; mosi_en           ; shift_reg[0]      ; clk           ; input_spi_clk ; 0.000        ; 0.048      ; 0.920      ;
+; 0.750 ; mosi_en           ; spi_miso~reg0     ; clk           ; input_spi_clk ; 0.000        ; 0.048      ; 0.920      ;
+; 0.751 ; tx_bit_counter[2] ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.868      ;
+; 0.751 ; tx_bit_counter[2] ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.868      ;
+; 0.751 ; tx_bit_counter[2] ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.868      ;
+; 0.751 ; tx_bit_counter[2] ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.868      ;
+; 0.751 ; tx_bit_counter[2] ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.868      ;
+; 0.769 ; mosi_en           ; byte_inbuff[3]    ; clk           ; input_spi_clk ; 0.000        ; 0.050      ; 0.941      ;
+; 0.769 ; mosi_en           ; byte_inbuff[6]    ; clk           ; input_spi_clk ; 0.000        ; 0.050      ; 0.941      ;
+; 0.769 ; mosi_en           ; byte_inbuff[4]    ; clk           ; input_spi_clk ; 0.000        ; 0.050      ; 0.941      ;
+; 0.769 ; mosi_en           ; byte_inbuff[5]    ; clk           ; input_spi_clk ; 0.000        ; 0.050      ; 0.941      ;
+; 0.769 ; mosi_en           ; byte_inbuff[2]    ; clk           ; input_spi_clk ; 0.000        ; 0.050      ; 0.941      ;
+; 0.769 ; mosi_en           ; byte_inbuff[1]    ; clk           ; input_spi_clk ; 0.000        ; 0.050      ; 0.941      ;
+; 0.769 ; mosi_en           ; byte_inbuff[0]    ; clk           ; input_spi_clk ; 0.000        ; 0.050      ; 0.941      ;
+; 0.769 ; mosi_en           ; byte_inbuff[7]    ; clk           ; input_spi_clk ; 0.000        ; 0.050      ; 0.941      ;
+; 0.783 ; tx_bit_counter[1] ; byte_counter[3]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.900      ;
+; 0.783 ; tx_bit_counter[1] ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.900      ;
+; 0.783 ; tx_bit_counter[1] ; byte_counter[4]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.900      ;
+; 0.783 ; tx_bit_counter[1] ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.900      ;
+; 0.783 ; tx_bit_counter[1] ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.900      ;
+; 0.793 ; byte_counter[3]   ; byte_counter[0]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.910      ;
+; 0.793 ; byte_counter[3]   ; byte_counter[2]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.910      ;
+; 0.793 ; byte_counter[3]   ; byte_counter[1]   ; input_spi_clk ; input_spi_clk ; 0.000        ; 0.035      ; 0.910      ;
++-------+-------------------+-------------------+---------------+---------------+--------------+------------+------------+
+
+
+------------------------------------------------
+; Fast 1200mV -40C Model Metastability Summary ;
+------------------------------------------------
+No synchronizer chains to report.
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -1.318  ; 0.179 ; N/A      ; N/A     ; -3.000              ;
+;  clk             ; -1.094  ; 0.179 ; N/A      ; N/A     ; -3.000              ;
+;  input_spi_clk   ; -1.318  ; 0.179 ; N/A      ; N/A     ; -3.000              ;
+; Design-wide TNS  ; -36.056 ; 0.0   ; 0.0      ; 0.0     ; -56.115             ;
+;  clk             ; -11.821 ; 0.000 ; N/A      ; N/A     ; -24.845             ;
+;  input_spi_clk   ; -24.235 ; 0.000 ; N/A      ; N/A     ; -31.270             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; lastAddrflag  ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ram_addr[0]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ram_addr[1]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ram_addr[2]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ram_addr[3]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ram_addr[4]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ram_addr[5]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ram_addr[6]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ram_addr[7]   ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; spi_miso      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; dummy         ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; ram_data[1]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[2]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[3]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[4]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[5]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[6]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[7]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[9]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[10]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[11]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[12]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[13]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[14]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[15]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[17]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[18]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[19]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[20]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[21]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[22]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[23]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[24]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[25]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[26]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[27]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[28]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[29]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[30]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[31]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; reset_n                 ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clk                     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; spi_cs                  ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; input_spi_clk           ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; spi_mosi                ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[0]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[8]             ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ram_data[16]            ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv n40c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; lastAddrflag  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.74e-09 V                   ; 2.4 V               ; -0.0195 V           ; 0.196 V                              ; 0.023 V                              ; 2.87e-10 s                  ; 3.09e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.74e-09 V                  ; 2.4 V              ; -0.0195 V          ; 0.196 V                             ; 0.023 V                             ; 2.87e-10 s                 ; 3.09e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[0]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.74e-09 V                   ; 2.4 V               ; -0.0195 V           ; 0.196 V                              ; 0.023 V                              ; 2.87e-10 s                  ; 3.09e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.74e-09 V                  ; 2.4 V              ; -0.0195 V          ; 0.196 V                             ; 0.023 V                             ; 2.87e-10 s                 ; 3.09e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[1]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.74e-09 V                   ; 2.4 V               ; -0.0195 V           ; 0.196 V                              ; 0.023 V                              ; 2.87e-10 s                  ; 3.09e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.74e-09 V                  ; 2.4 V              ; -0.0195 V          ; 0.196 V                             ; 0.023 V                             ; 2.87e-10 s                 ; 3.09e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[2]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.74e-09 V                   ; 2.4 V               ; -0.0195 V           ; 0.196 V                              ; 0.023 V                              ; 2.87e-10 s                  ; 3.09e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.74e-09 V                  ; 2.4 V              ; -0.0195 V          ; 0.196 V                             ; 0.023 V                             ; 2.87e-10 s                 ; 3.09e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[3]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.74e-09 V                   ; 2.4 V               ; -0.0195 V           ; 0.196 V                              ; 0.023 V                              ; 2.87e-10 s                  ; 3.09e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.74e-09 V                  ; 2.4 V              ; -0.0195 V          ; 0.196 V                             ; 0.023 V                             ; 2.87e-10 s                 ; 3.09e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[4]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.74e-09 V                   ; 2.4 V               ; -0.0195 V           ; 0.196 V                              ; 0.023 V                              ; 2.87e-10 s                  ; 3.09e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.74e-09 V                  ; 2.4 V              ; -0.0195 V          ; 0.196 V                             ; 0.023 V                             ; 2.87e-10 s                 ; 3.09e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[5]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.4e-09 V                    ; 2.4 V               ; -0.0306 V           ; 0.178 V                              ; 0.087 V                              ; 2.81e-10 s                  ; 2.95e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.4e-09 V                   ; 2.4 V              ; -0.0306 V          ; 0.178 V                             ; 0.087 V                             ; 2.81e-10 s                 ; 2.95e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[6]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.74e-09 V                   ; 2.4 V               ; -0.0195 V           ; 0.196 V                              ; 0.023 V                              ; 2.87e-10 s                  ; 3.09e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.74e-09 V                  ; 2.4 V              ; -0.0195 V          ; 0.196 V                             ; 0.023 V                             ; 2.87e-10 s                 ; 3.09e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[7]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.74e-09 V                   ; 2.4 V               ; -0.0195 V           ; 0.196 V                              ; 0.023 V                              ; 2.87e-10 s                  ; 3.09e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.74e-09 V                  ; 2.4 V              ; -0.0195 V          ; 0.196 V                             ; 0.023 V                             ; 2.87e-10 s                 ; 3.09e-10 s                 ; Yes                       ; Yes                       ;
+; spi_miso      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.74e-09 V                   ; 2.4 V               ; -0.0195 V           ; 0.196 V                              ; 0.023 V                              ; 2.87e-10 s                  ; 3.09e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.74e-09 V                  ; 2.4 V              ; -0.0195 V          ; 0.196 V                             ; 0.023 V                             ; 2.87e-10 s                 ; 3.09e-10 s                 ; Yes                       ; Yes                       ;
+; dummy         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.4e-09 V                    ; 2.39 V              ; -0.0122 V           ; 0.154 V                              ; 0.017 V                              ; 4.74e-10 s                  ; 4.5e-10 s                   ; No                         ; Yes                        ; 2.32 V                      ; 1.4e-09 V                   ; 2.39 V             ; -0.0122 V          ; 0.154 V                             ; 0.017 V                             ; 4.74e-10 s                 ; 4.5e-10 s                  ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.16e-09 V                   ; 2.39 V              ; -0.0798 V           ; 0.13 V                               ; 0.103 V                              ; 2.71e-10 s                  ; 2.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 1.16e-09 V                  ; 2.39 V             ; -0.0798 V          ; 0.13 V                              ; 0.103 V                             ; 2.71e-10 s                 ; 2.5e-10 s                  ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.64e-09 V                   ; 2.39 V              ; -0.00331 V          ; 0.132 V                              ; 0.006 V                              ; 4.59e-10 s                  ; 5.62e-10 s                  ; No                         ; Yes                        ; 2.32 V                      ; 1.64e-09 V                  ; 2.39 V             ; -0.00331 V         ; 0.132 V                             ; 0.006 V                             ; 4.59e-10 s                 ; 5.62e-10 s                 ; No                        ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 100c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; lastAddrflag  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.44e-06 V                   ; 2.35 V              ; -0.0112 V           ; 0.129 V                              ; 0.036 V                              ; 4.71e-10 s                  ; 4.65e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.44e-06 V                  ; 2.35 V             ; -0.0112 V          ; 0.129 V                             ; 0.036 V                             ; 4.71e-10 s                 ; 4.65e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[0]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.44e-06 V                   ; 2.35 V              ; -0.0112 V           ; 0.129 V                              ; 0.036 V                              ; 4.71e-10 s                  ; 4.65e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.44e-06 V                  ; 2.35 V             ; -0.0112 V          ; 0.129 V                             ; 0.036 V                             ; 4.71e-10 s                 ; 4.65e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[1]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.44e-06 V                   ; 2.35 V              ; -0.0112 V           ; 0.129 V                              ; 0.036 V                              ; 4.71e-10 s                  ; 4.65e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.44e-06 V                  ; 2.35 V             ; -0.0112 V          ; 0.129 V                             ; 0.036 V                             ; 4.71e-10 s                 ; 4.65e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[2]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.44e-06 V                   ; 2.35 V              ; -0.0112 V           ; 0.129 V                              ; 0.036 V                              ; 4.71e-10 s                  ; 4.65e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.44e-06 V                  ; 2.35 V             ; -0.0112 V          ; 0.129 V                             ; 0.036 V                             ; 4.71e-10 s                 ; 4.65e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[3]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.44e-06 V                   ; 2.35 V              ; -0.0112 V           ; 0.129 V                              ; 0.036 V                              ; 4.71e-10 s                  ; 4.65e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.44e-06 V                  ; 2.35 V             ; -0.0112 V          ; 0.129 V                             ; 0.036 V                             ; 4.71e-10 s                 ; 4.65e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[4]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.44e-06 V                   ; 2.35 V              ; -0.0112 V           ; 0.129 V                              ; 0.036 V                              ; 4.71e-10 s                  ; 4.65e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.44e-06 V                  ; 2.35 V             ; -0.0112 V          ; 0.129 V                             ; 0.036 V                             ; 4.71e-10 s                 ; 4.65e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[5]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 9.69e-07 V                   ; 2.35 V              ; -0.0071 V           ; 0.116 V                              ; 0.028 V                              ; 4.61e-10 s                  ; 4.5e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 9.69e-07 V                  ; 2.35 V             ; -0.0071 V          ; 0.116 V                             ; 0.028 V                             ; 4.61e-10 s                 ; 4.5e-10 s                  ; Yes                       ; Yes                       ;
+; ram_addr[6]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.44e-06 V                   ; 2.35 V              ; -0.0112 V           ; 0.129 V                              ; 0.036 V                              ; 4.71e-10 s                  ; 4.65e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.44e-06 V                  ; 2.35 V             ; -0.0112 V          ; 0.129 V                             ; 0.036 V                             ; 4.71e-10 s                 ; 4.65e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[7]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.44e-06 V                   ; 2.35 V              ; -0.0112 V           ; 0.129 V                              ; 0.036 V                              ; 4.71e-10 s                  ; 4.65e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.44e-06 V                  ; 2.35 V             ; -0.0112 V          ; 0.129 V                             ; 0.036 V                             ; 4.71e-10 s                 ; 4.65e-10 s                 ; Yes                       ; Yes                       ;
+; spi_miso      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.44e-06 V                   ; 2.35 V              ; -0.0112 V           ; 0.129 V                              ; 0.036 V                              ; 4.71e-10 s                  ; 4.65e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.44e-06 V                  ; 2.35 V             ; -0.0112 V          ; 0.129 V                             ; 0.036 V                             ; 4.71e-10 s                 ; 4.65e-10 s                 ; Yes                       ; Yes                       ;
+; dummy         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 9.69e-07 V                   ; 2.35 V              ; -0.00962 V          ; 0.125 V                              ; 0.041 V                              ; 6.76e-10 s                  ; 6.43e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 9.69e-07 V                  ; 2.35 V             ; -0.00962 V         ; 0.125 V                             ; 0.041 V                             ; 6.76e-10 s                 ; 6.43e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 7.77e-07 V                   ; 2.35 V              ; -0.00801 V          ; 0.087 V                              ; 0.01 V                               ; 4.39e-10 s                  ; 3.77e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 7.77e-07 V                  ; 2.35 V             ; -0.00801 V         ; 0.087 V                             ; 0.01 V                              ; 4.39e-10 s                 ; 3.77e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 1.28e-06 V                   ; 2.34 V              ; -0.00738 V          ; 0.097 V                              ; 0.024 V                              ; 6.41e-10 s                  ; 8.13e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 1.28e-06 V                  ; 2.34 V             ; -0.00738 V         ; 0.097 V                             ; 0.024 V                             ; 6.41e-10 s                 ; 8.13e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Fast 1200mv n40c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; lastAddrflag  ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.18e-09 V                   ; 2.74 V              ; -0.0527 V           ; 0.162 V                              ; 0.083 V                              ; 2.61e-10 s                  ; 2.44e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.18e-09 V                  ; 2.74 V             ; -0.0527 V          ; 0.162 V                             ; 0.083 V                             ; 2.61e-10 s                 ; 2.44e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[0]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.18e-09 V                   ; 2.74 V              ; -0.0527 V           ; 0.162 V                              ; 0.083 V                              ; 2.61e-10 s                  ; 2.44e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.18e-09 V                  ; 2.74 V             ; -0.0527 V          ; 0.162 V                             ; 0.083 V                             ; 2.61e-10 s                 ; 2.44e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[1]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.18e-09 V                   ; 2.74 V              ; -0.0527 V           ; 0.162 V                              ; 0.083 V                              ; 2.61e-10 s                  ; 2.44e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.18e-09 V                  ; 2.74 V             ; -0.0527 V          ; 0.162 V                             ; 0.083 V                             ; 2.61e-10 s                 ; 2.44e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[2]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.18e-09 V                   ; 2.74 V              ; -0.0527 V           ; 0.162 V                              ; 0.083 V                              ; 2.61e-10 s                  ; 2.44e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.18e-09 V                  ; 2.74 V             ; -0.0527 V          ; 0.162 V                             ; 0.083 V                             ; 2.61e-10 s                 ; 2.44e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[3]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.18e-09 V                   ; 2.74 V              ; -0.0527 V           ; 0.162 V                              ; 0.083 V                              ; 2.61e-10 s                  ; 2.44e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.18e-09 V                  ; 2.74 V             ; -0.0527 V          ; 0.162 V                             ; 0.083 V                             ; 2.61e-10 s                 ; 2.44e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[4]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.18e-09 V                   ; 2.74 V              ; -0.0527 V           ; 0.162 V                              ; 0.083 V                              ; 2.61e-10 s                  ; 2.44e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.18e-09 V                  ; 2.74 V             ; -0.0527 V          ; 0.162 V                             ; 0.083 V                             ; 2.61e-10 s                 ; 2.44e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[5]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.24e-09 V                   ; 2.76 V              ; -0.0537 V           ; 0.17 V                               ; 0.079 V                              ; 2.61e-10 s                  ; 2.39e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 2.24e-09 V                  ; 2.76 V             ; -0.0537 V          ; 0.17 V                              ; 0.079 V                             ; 2.61e-10 s                 ; 2.39e-10 s                 ; No                        ; Yes                       ;
+; ram_addr[6]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.18e-09 V                   ; 2.74 V              ; -0.0527 V           ; 0.162 V                              ; 0.083 V                              ; 2.61e-10 s                  ; 2.44e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.18e-09 V                  ; 2.74 V             ; -0.0527 V          ; 0.162 V                             ; 0.083 V                             ; 2.61e-10 s                 ; 2.44e-10 s                 ; Yes                       ; Yes                       ;
+; ram_addr[7]   ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.18e-09 V                   ; 2.74 V              ; -0.0527 V           ; 0.162 V                              ; 0.083 V                              ; 2.61e-10 s                  ; 2.44e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.18e-09 V                  ; 2.74 V             ; -0.0527 V          ; 0.162 V                             ; 0.083 V                             ; 2.61e-10 s                 ; 2.44e-10 s                 ; Yes                       ; Yes                       ;
+; spi_miso      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 3.18e-09 V                   ; 2.74 V              ; -0.0527 V           ; 0.162 V                              ; 0.083 V                              ; 2.61e-10 s                  ; 2.44e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 3.18e-09 V                  ; 2.74 V             ; -0.0527 V          ; 0.162 V                             ; 0.083 V                             ; 2.61e-10 s                 ; 2.44e-10 s                 ; Yes                       ; Yes                       ;
+; dummy         ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.24e-09 V                   ; 2.74 V              ; -0.0529 V           ; 0.285 V                              ; 0.071 V                              ; 2.99e-10 s                  ; 3.3e-10 s                   ; No                         ; Yes                        ; 2.62 V                      ; 2.24e-09 V                  ; 2.74 V             ; -0.0529 V          ; 0.285 V                             ; 0.071 V                             ; 2.99e-10 s                 ; 3.3e-10 s                  ; No                        ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 1.87e-09 V                   ; 2.79 V              ; -0.0524 V           ; 0.19 V                               ; 0.066 V                              ; 2.63e-10 s                  ; 1.96e-10 s                  ; No                         ; Yes                        ; 2.62 V                      ; 1.87e-09 V                  ; 2.79 V             ; -0.0524 V          ; 0.19 V                              ; 0.066 V                             ; 2.63e-10 s                 ; 1.96e-10 s                 ; No                        ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.62 V                       ; 2.91e-09 V                   ; 2.73 V              ; -0.0159 V           ; 0.231 V                              ; 0.026 V                              ; 2.89e-10 s                  ; 4.54e-10 s                  ; Yes                        ; Yes                        ; 2.62 V                      ; 2.91e-09 V                  ; 2.73 V             ; -0.0159 V          ; 0.231 V                             ; 0.026 V                             ; 2.89e-10 s                 ; 4.54e-10 s                 ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Transfers                                                           ;
++---------------+---------------+----------+----------+----------+----------+
+; From Clock    ; To Clock      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------+---------------+----------+----------+----------+----------+
+; clk           ; clk           ; 23       ; 1        ; 0        ; 1        ;
+; input_spi_clk ; clk           ; 0        ; 0        ; 13       ; 0        ;
+; clk           ; input_spi_clk ; 24       ; 0        ; 0        ; 0        ;
+; input_spi_clk ; input_spi_clk ; 110      ; 0        ; 0        ; 0        ;
++---------------+---------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------+
+; Hold Transfers                                                            ;
++---------------+---------------+----------+----------+----------+----------+
+; From Clock    ; To Clock      ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++---------------+---------------+----------+----------+----------+----------+
+; clk           ; clk           ; 23       ; 1        ; 0        ; 1        ;
+; input_spi_clk ; clk           ; 0        ; 0        ; 13       ; 0        ;
+; clk           ; input_spi_clk ; 24       ; 0        ; 0        ; 0        ;
+; input_spi_clk ; input_spi_clk ; 110      ; 0        ; 0        ; 0        ;
++---------------+---------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 6     ; 6    ;
+; Unconstrained Input Port Paths  ; 73    ; 73   ;
+; Unconstrained Output Ports      ; 7     ; 7    ;
+; Unconstrained Output Port Paths ; 7     ; 7    ;
++---------------------------------+-------+------+
+
+
++----------------------------------------------------+
+; Clock Status Summary                               ;
++---------------+---------------+------+-------------+
+; Target        ; Clock         ; Type ; Status      ;
++---------------+---------------+------+-------------+
+; clk           ; clk           ; Base ; Constrained ;
+; input_spi_clk ; input_spi_clk ; Base ; Constrained ;
++---------------+---------------+------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                           ;
++--------------+--------------------------------------------------------------------------------------+
+; Input Port   ; Comment                                                                              ;
++--------------+--------------------------------------------------------------------------------------+
+; ram_data[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ram_data[8]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ram_data[16] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; reset_n      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; spi_cs       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; spi_mosi     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++--------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; ram_addr[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ram_addr[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ram_addr[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ram_addr[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ram_addr[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ram_addr[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; spi_miso    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                           ;
++--------------+--------------------------------------------------------------------------------------+
+; Input Port   ; Comment                                                                              ;
++--------------+--------------------------------------------------------------------------------------+
+; ram_data[0]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ram_data[8]  ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ram_data[16] ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; reset_n      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; spi_cs       ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; spi_mosi     ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++--------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; ram_addr[0] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ram_addr[1] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ram_addr[2] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ram_addr[3] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ram_addr[4] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; ram_addr[5] ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; spi_miso    ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime TimeQuest Timing Analyzer
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Mon Sep 09 00:33:58 2024
+Info: Command: quartus_sta spi_slave -c spi_slave
+Info: qsta_default_script.tcl version: #3
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (21077): Low junction temperature is -40 degrees C
+Info (21077): High junction temperature is 100 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'spi_slave.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name input_spi_clk input_spi_clk
+    Info (332105): create_clock -period 1.000 -name clk clk
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow 1200mV 100C Model
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.318
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.318             -24.235 input_spi_clk 
+    Info (332119):    -1.094             -11.821 clk 
+Info (332146): Worst-case hold slack is 0.416
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.416               0.000 clk 
+    Info (332119):     0.417               0.000 input_spi_clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -31.270 input_spi_clk 
+    Info (332119):    -3.000             -24.845 clk 
+Info: Analyzing Slow 1200mV -40C Model
+Info (334003): Started post-fitting delay annotation
+Info (334004): Delay annotation completed successfully
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -1.040
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -1.040             -19.098 input_spi_clk 
+    Info (332119):    -0.937              -9.068 clk 
+Info (332146): Worst-case hold slack is 0.343
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.343               0.000 clk 
+    Info (332119):     0.343               0.000 input_spi_clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -31.270 input_spi_clk 
+    Info (332119):    -3.000             -24.845 clk 
+Info: Analyzing Fast 1200mV -40C Model
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case setup slack is -0.358
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.358              -0.358 clk 
+    Info (332119):    -0.066              -0.802 input_spi_clk 
+Info (332146): Worst-case hold slack is 0.179
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):     0.179               0.000 clk 
+    Info (332119):     0.179               0.000 input_spi_clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000             -26.562 input_spi_clk 
+    Info (332119):    -3.000             -21.476 clk 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4760 megabytes
+    Info: Processing ended: Mon Sep 09 00:34:01 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:04
+
+

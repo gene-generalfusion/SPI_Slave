@@ -1,0 +1,6 @@
+
+State Machine - |SPI_SLAVE|state
+Name state.IDLE state.RECEIVE_DATA state.PREP_DATA 
+state.IDLE 0 0 0 
+state.PREP_DATA 1 0 1 
+state.RECEIVE_DATA 1 1 0 

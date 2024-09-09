@@ -1,0 +1,86 @@
+/*-----------------------------------------------------------------------------------------------------
+This is a general SPI slave module that can be used to interface with a master device. The module
+receives data from the master device and stores it in a register. The module has a state machine that
+waits for the chip select signal to go low, then waits for the master to send data on the input clock.
+-------------------------------------------------------------------------------------------------------*/
+
+module SPI_SLAVE #(
+    parameter WORD_SIZE = 16,
+    parameter SPI_MODE = 0
+)(
+    // Control signals
+    input logic clk,
+    input logic reset_n,
+    output logic [WORD_SIZE-1:0] rx_data,
+    output logic [WORD_SIZE/2-1:0] tx_data,
+
+    // SPI communication
+    input logic input_spi_clk, //the clock coming from master
+    input logic spi_mosi, // master out slave in bits
+    output logic spi_miso, // master in slave out bits
+    input logic spi_cs // Active low chip select
+);
+	
+	enum bit [1 : 0] {IDLE, RECEIVE_DATA} state; //state machine states
+
+    logic [WORD_SIZE-1:0] shift_reg = 0;// Register to temporarily hold received data
+    logic [$clog2(WORD_SIZE) - 1:0] bit_counter;  // Counter for received bits
+	logic [2:0] tx_bit_counter; //transfer bit counter
+    logic pulse_rx_done = 0;
+    logic rx_done = 0; //flag to signal when data has been received
+    
+
+    //run on input clock signal to receive data when CS is held low
+    always_ff @(posedge input_spi_clk or negedge reset_n) begin
+        if (~reset_n) begin
+            shift_reg <= 0;
+            bit_counter <= 0;
+            rx_done <= 0;
+        end else if (~spi_cs) begin
+            shift_reg <= {shift_reg[WORD_SIZE-2:0], spi_mosi};
+            bit_counter <= bit_counter + 1;
+            if (bit_counter == WORD_SIZE - 1) begin
+                rx_done <= 1;
+            end else begin
+                rx_done <= 0;
+            end
+        end else begin
+            bit_counter <= 0;
+            rx_done <= 0;
+        end
+    end
+
+    //state machine to get bits in SPI
+    always_ff @(posedge clk or negedge reset_n) begin
+		if (~reset_n) begin
+            state <= IDLE;
+            rx_data <= 0;
+        end else begin
+            case(state)
+
+                //wait for cs to go low, then receive data
+                IDLE:
+                    begin
+                        if(~spi_cs) begin
+                            state <= RECEIVE_DATA;
+                        end
+                        else begin
+                            state <= IDLE;
+                        end
+                    end
+                
+                //wait for data to be received on input clock, then store data on internal clock
+                RECEIVE_DATA: begin
+                    if (rx_done) begin
+                        rx_data <= shift_reg;
+                        state <= IDLE;
+                    end else begin
+                        state <= RECEIVE_DATA;
+                    end
+                end
+
+            endcase
+		end
+	end
+	 
+endmodule

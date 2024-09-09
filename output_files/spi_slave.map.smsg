@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at spi_slave.sv(60): always construct contains both blocking and non-blocking assignments File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 60

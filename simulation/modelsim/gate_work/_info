@@ -1,0 +1,64 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/simulation/modelsim
+vhard_block
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1725867264
+!i10b 1
+!s100 nC5Y[F:o8GAAB8>0RVI7K1
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Ia]J5e>Cg@dd>I5m:bUdW?2
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+Z5 w1725867244
+Z6 8spi_slave.svo
+Z7 Fspi_slave.svo
+!i122 0
+L0 2478 34
+Z8 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z9 !s108 1725867264.000000
+!s107 spi_slave.svo|
+Z10 !s90 -reportprogress|300|-sv|-work|work|+incdir+.|spi_slave.svo|
+!i113 1
+Z11 o-sv -work work
+Z12 !s92 -sv -work work +incdir+.
+Z13 tCvgOpt 0
+vSPI_SLAVE
+R1
+R2
+!i10b 1
+!s100 B786kT<1^VbZBV]GE5D]41
+R3
+IE8dak=YQ84oz9Lmb46Ba]3
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 0
+L0 31 2446
+R8
+r1
+!s85 0
+31
+R9
+Z14 !s107 spi_slave.svo|
+R10
+!i113 1
+R11
+R12
+R13
+n@s@p@i_@s@l@a@v@e

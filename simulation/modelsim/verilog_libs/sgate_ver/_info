@@ -1,0 +1,448 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/simulation/modelsim
+vio_buf_opdrn
+Z1 !s110 1725867390
+!i10b 1
+!s100 o>nz1>Xc50eF;H7j8]Lef2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IW7604:1D=j03l72]SXkKM0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z4 w1509008471
+Z5 8c:/intelfpga_lite/17.1/quartus/eda/sim_lib/sgate.v
+Z6 Fc:/intelfpga_lite/17.1/quartus/eda/sim_lib/sgate.v
+!i122 44
+L0 248 22
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1725867390.000000
+!s107 c:/intelfpga_lite/17.1/quartus/eda/sim_lib/sgate.v|
+Z9 !s90 -reportprogress|300|-vlog01compat|-work|sgate_ver|c:/intelfpga_lite/17.1/quartus/eda/sim_lib/sgate.v|
+!i113 1
+Z10 o-vlog01compat -work sgate_ver
+Z11 tCvgOpt 0
+vio_buf_tri
+R1
+!i10b 1
+!s100 KbnJ]XS`fzAKMffi76V<53
+R2
+IESf;QmQm0ab@F::d@[kNa2
+R3
+R0
+R4
+R5
+R6
+!i122 44
+L0 220 23
+R7
+r1
+!s85 0
+31
+R8
+Z12 !s107 c:/intelfpga_lite/17.1/quartus/eda/sim_lib/sgate.v|
+R9
+!i113 1
+R10
+R11
+vmux21
+R1
+!i10b 1
+!s100 JAPO5QO^`lclHbe2_PZBg1
+R2
+IVWm?ZYWePf:nf;5SJ<_Q_1
+R3
+R0
+R4
+R5
+R6
+!i122 44
+L0 190 26
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+voper_add
+R1
+!i10b 1
+!s100 P7a_Y;12FIQXi4IcFPNTl3
+R2
+I3CIHIneLAN;N^`ifjMEdS2
+R3
+R0
+R4
+R5
+R6
+!i122 44
+L0 18 74
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+voper_addsub
+R1
+!i10b 1
+!s100 I5mXGoaMlLSoCPH@QWeA]1
+R2
+I3_zO6>?_e[PEDgL1Jfh8]2
+R3
+R0
+R4
+R5
+R6
+!i122 44
+L0 95 91
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+voper_bus_mux
+R1
+!i10b 1
+!s100 >kzIP0WV[LKGEJ_9h3MWl2
+R2
+IE@LlJCg3iYF?AjRUDM6=22
+R3
+R0
+R4
+R5
+R6
+!i122 44
+L0 1072 59
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+voper_decoder
+R1
+!i10b 1
+!s100 28XB[C_VG`SWQ?inbNZf81
+R2
+II5lT1lPD>kS]T?De77_Wd0
+R3
+R0
+R4
+R5
+R6
+!i122 44
+L0 1036 32
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+voper_div
+R1
+!i10b 1
+!s100 cZ>6mCRkY4lHdZ`3W2ZaB3
+R2
+Ie7HzozDfNZPEmgEPlWNeA1
+R3
+R0
+R4
+R5
+R6
+!i122 44
+L0 394 85
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+voper_latch
+R1
+!i10b 1
+!s100 >Fecfn4z5A012K8JM8cA41
+R2
+IW_i274lDXD<W6nHMZ8_;l1
+R3
+R0
+R4
+R5
+R6
+!i122 44
+L0 1135 17
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+voper_left_shift
+R1
+!i10b 1
+!s100 6J3ZzI8V[Pc:dh9OSFH0o2
+R2
+IY[D0V6=P2:n3TM58IT@R21
+R3
+R0
+R4
+R5
+R6
+!i122 44
+L0 572 72
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+voper_less_than
+R1
+!i10b 1
+!s100 b<d__J0cl]Jag9MLMER;o0
+R2
+ICa;mNF0C5bH;2G8^O]>Hb0
+R3
+R0
+R4
+R5
+R6
+!i122 44
+L0 853 88
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+voper_mod
+R1
+!i10b 1
+!s100 `EneCa;OnbgS^S_9QRW2<0
+R2
+IM_0:T5XZ69;ZS<NQZ?@[f1
+R3
+R0
+R4
+R5
+R6
+!i122 44
+L0 483 85
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+voper_mult
+R1
+!i10b 1
+!s100 ^;o97hXdDDQP^iDV5ffFY3
+R2
+IO^@]cn@m>IiZ:FcEL9iSX0
+R3
+R0
+R4
+R5
+R6
+!i122 44
+L0 274 68
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+voper_mux
+R1
+!i10b 1
+!s100 Jlj`K^VNIQK7o@ljkBaXl1
+R2
+Ia7Uh^=J<fjlK@Ia@G1dWY3
+R3
+R0
+R4
+R5
+R6
+!i122 44
+L0 945 42
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+voper_right_shift
+R1
+!i10b 1
+!s100 eCdmCn<7=:2:dMJPZkOgL3
+R2
+InG8M4L;YBLJD`>`Xga;1_3
+R3
+R0
+R4
+R5
+R6
+!i122 44
+L0 649 79
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+voper_rotate_left
+R1
+!i10b 1
+!s100 c9Z4]YYBTR^MF3zQ^6Znh2
+R2
+I1@9hMEcX=1k;RfoW[9o>83
+R3
+R0
+R4
+R5
+R6
+!i122 44
+L0 732 57
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+voper_rotate_right
+R1
+!i10b 1
+!s100 dRe[[aFUHBT2><4iG9To_0
+R2
+IEi6RlR=B8V9VL>SM=9cZd1
+R3
+R0
+R4
+R5
+R6
+!i122 44
+L0 793 56
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+voper_selector
+R1
+!i10b 1
+!s100 S;P79TzjMHZX?lbCbWA=]1
+R2
+IDi:_0leVFz;k4D_UW?l;z3
+R3
+R0
+R4
+R5
+R6
+!i122 44
+L0 991 41
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+vtri_bus
+R1
+!i10b 1
+!s100 GN088HjY^3kVmjmFZI8i32
+R2
+Ihg5K_;_UZc4gQ2agHi2?82
+R3
+R0
+R4
+R5
+R6
+!i122 44
+L0 347 43
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11

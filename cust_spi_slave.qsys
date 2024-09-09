@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system name="$${FILENAME}">
+ <component
+   name="$${FILENAME}"
+   displayName="$${FILENAME}"
+   version="1.0"
+   description=""
+   tags="INTERNAL_COMPONENT=true"
+   categories="" />
+ <parameter name="bonusData"><![CDATA[bonusData 
+{
+   element accelerometer_spi_0
+   {
+      datum _sortIndex
+      {
+         value = "0";
+         type = "int";
+      }
+   }
+}
+]]></parameter>
+ <parameter name="clockCrossingAdapter" value="HANDSHAKE" />
+ <parameter name="device" value="10CL025YU256I7G" />
+ <parameter name="deviceFamily" value="Cyclone 10 LP" />
+ <parameter name="deviceSpeedGrade" value="7" />
+ <parameter name="fabricMode" value="QSYS" />
+ <parameter name="generateLegacySim" value="false" />
+ <parameter name="generationId" value="0" />
+ <parameter name="globalResetBus" value="false" />
+ <parameter name="hdlLanguage" value="VERILOG" />
+ <parameter name="hideFromIPCatalog" value="true" />
+ <parameter name="lockedInterfaceDefinition" value="" />
+ <parameter name="maxAdditionalLatency" value="1" />
+ <parameter name="projectName" value="" />
+ <parameter name="sopcBorderPoints" value="false" />
+ <parameter name="systemHash" value="0" />
+ <parameter name="testBenchDutName" value="" />
+ <parameter name="timeStamp" value="0" />
+ <parameter name="useTestBenchNamingPattern" value="false" />
+ <instanceScript></instanceScript>
+ <interface
+   name="avalon_accelerometer_spi_mode_slave"
+   internal="accelerometer_spi_0.avalon_accelerometer_spi_mode_slave"
+   type="avalon"
+   dir="end">
+  <port name="address" internal="address" />
+  <port name="byteenable" internal="byteenable" />
+  <port name="read" internal="read" />
+  <port name="write" internal="write" />
+  <port name="writedata" internal="writedata" />
+  <port name="readdata" internal="readdata" />
+  <port name="waitrequest" internal="waitrequest" />
+ </interface>
+ <interface name="clk" internal="accelerometer_spi_0.clk" type="clock" dir="end">
+  <port name="clk" internal="clk" />
+ </interface>
+ <interface
+   name="external_interface"
+   internal="accelerometer_spi_0.external_interface"
+   type="conduit"
+   dir="end">
+  <port name="I2C_SDAT" internal="I2C_SDAT" />
+  <port name="I2C_SCLK" internal="I2C_SCLK" />
+  <port name="G_SENSOR_CS_N" internal="G_SENSOR_CS_N" />
+  <port name="G_SENSOR_INT" internal="G_SENSOR_INT" />
+ </interface>
+ <interface
+   name="interrupt"
+   internal="accelerometer_spi_0.interrupt"
+   type="interrupt"
+   dir="end">
+  <port name="irq" internal="irq" />
+ </interface>
+ <interface
+   name="reset"
+   internal="accelerometer_spi_0.reset"
+   type="reset"
+   dir="end">
+  <port name="reset" internal="reset" />
+ </interface>
+ <module
+   name="accelerometer_spi_0"
+   kind="altera_up_avalon_accelerometer_spi"
+   version="17.1"
+   enabled="1"
+   autoexport="1">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="0" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone 10 LP" />
+ </module>
+ <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
+ <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.insertDefaultSlave" value="FALSE" />
+ <interconnectRequirement for="$system" name="qsys_mm.maxAdditionalLatency" value="1" />
+</system>
