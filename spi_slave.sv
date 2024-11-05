@@ -19,7 +19,7 @@ module SPI_SLAVE #(
 		output logic lastAddrflag, //flash to signal the 0x3f has reached
 		
 		//addresses - 8 bit 
-		output logic [ADDR_SIZE - 1 : 0] ram_addr,  //addr send to RAM block to cue for data
+		output logic [ADDR_SIZE - 1:0] ram_addr,  //addr send to RAM block to cue for data
 		input logic [WORD_SIZE - 1:0] ram_data, //data read from ram - temp data for testing
 		
 		//output logic [WORD_SIZE-1:0] rx_data, not sure why rx is an output 
@@ -29,8 +29,8 @@ module SPI_SLAVE #(
 		input logic input_spi_clk, //the clock coming from master
 		input logic spi_mosi, // master out slave in bits
 		input logic spi_cs, // Active low chip select
-		output logic spi_miso, // master in slave out bits
-		output logic dummy
+		output logic spi_miso // master in slave out bits
+		//output logic dummy
 	);
 	
 	enum bit [2 : 0] {IDLE, PREP_DATA, RECEIVE_DATA} state; //state machine states - change to [2:0] to add more states
@@ -68,12 +68,12 @@ module SPI_SLAVE #(
 				tx_done <= 0;
 				spi_miso <= 0;
 				tx_bit_counter <=0;
-				
+
         end 
 		  else if (~spi_cs) begin
 				
 				//make mosi for address 8 bit 
-				if (mosi_en) begin
+				if (mosi_en == 1) begin
 					byte_inbuff <= {byte_inbuff[REG_SIZE-1:0], spi_mosi};  
 					//addr_reg <= {addr_reg[ADDR_SIZE - 1:0], spi_mosi};  //b7-b0 *might need to do ADDR_SIZE-2:0.	
 					//increment counter
@@ -82,7 +82,7 @@ module SPI_SLAVE #(
 				else if (send_data == 1) begin
 					if (byte_counter == 0 ) begin
 						for (j = 0; j <= 7; j = j + 1) begin  //*****data is latching,  need to find a way to unlatch it*************************
-							shift_reg[j] <= byte_outbuff[j];  
+							shift_reg[j] <= byte_outbuff[j];  	
 						end		
 					end
 					else if (byte_counter == 1 ) begin
@@ -95,6 +95,7 @@ module SPI_SLAVE #(
 							shift_reg[j-16] <= byte_outbuff[j];  // here could make a j-lshift, lshift changes based on counter
 						end		
 					end
+					
 					spi_miso <= {shift_reg[REG_SIZE-1:0], shift_reg};
 					tx_bit_counter <= tx_bit_counter + 1;	
 				end
@@ -106,7 +107,7 @@ module SPI_SLAVE #(
 					if (byte_counter >= 3) begin
 						tx_done <= 0;
 						byte_counter <= 0;
-						if (ram_addr == 6'h3f) begin
+						if (ram_addr == 2'h3f) begin
 							lastAddrflag <= 0;
 						end
 					end
@@ -116,10 +117,9 @@ module SPI_SLAVE #(
             end 
 				else begin
                 rx_done <= 0;
-            end
-				
-				
-        end else begin
+            end			
+        end 
+		  else begin
             bit_counter <= 0;
             rx_done <= 0;
         end
@@ -129,11 +129,10 @@ module SPI_SLAVE #(
 	always_ff @(negedge clk) begin
 		if (~reset_n ) begin
 			ram_addr <= 0;
-			{read_ram} <= 0;
+			//{read_ram} <= 0;
 			//ram_data <= 0;
 		end
 		else if (~spi_cs) begin //send address
-		
 			//set address 
 			if (byte_inbuff[7] == 1) begin
 				for (i = 0; i <= 5; i = i + 1) begin //only sending 6 bit to ram during negedge clk cycle
@@ -146,7 +145,6 @@ module SPI_SLAVE #(
 			else begin
 				addr_set <= 0;
 			end
-
 		end
 	end
 	
@@ -163,12 +161,12 @@ module SPI_SLAVE #(
 		if (cyc_cnt == 1) begin
 			cyc_cnt_done <= 1;
 			byte_outbuff <= ram_data;
+			//spi_miso <= byte_outbuff[j]; 
 			cyc_cnt <= 0;
 		end
 		else begin
 			cyc_cnt_done <= 0;
 		end
-		
 	end
 
     //state machine to get bits in SPI
@@ -182,7 +180,6 @@ module SPI_SLAVE #(
 		end 
 		else begin
             case(state)
-				
                 //wait for cs to go low, then receive data
                 IDLE:begin
 								if(~spi_cs) begin								
@@ -218,15 +215,8 @@ module SPI_SLAVE #(
 								else if (spi_cs) begin // if a posedge from chip select, it goes back to idle
 									state <= IDLE;
 								end 
-									//else begin
-									//	state <= RECEIVE_DATA;
-									//end
 							end
 					
-					//SEND_DATA:begin
-								//do something
-							//end
-							
             endcase
 		end
 	end

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for spi_slave
-Mon Sep 09 00:33:43 2024
+Mon Sep 09 15:40:30 2024
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -47,16 +47,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Sep 09 00:33:43 2024       ;
+; Analysis & Synthesis Status        ; Successful - Mon Sep 09 15:40:30 2024       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; spi_slave                                   ;
 ; Top-level Entity Name              ; SPI_SLAVE                                   ;
 ; Family                             ; Cyclone 10 LP                               ;
-; Total logic elements               ; 55                                          ;
-;     Total combinational functions  ; 42                                          ;
+; Total logic elements               ; 57                                          ;
+;     Total combinational functions  ; 45                                          ;
 ;     Dedicated logic registers      ; 39                                          ;
 ; Total registers                    ; 39                                          ;
-; Total pins                         ; 48                                          ;
+; Total pins                         ; 47                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -181,30 +181,30 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+---------------+
 ; Resource                                    ; Usage         ;
 +---------------------------------------------+---------------+
-; Estimated Total logic elements              ; 55            ;
+; Estimated Total logic elements              ; 57            ;
 ;                                             ;               ;
-; Total combinational functions               ; 42            ;
+; Total combinational functions               ; 45            ;
 ; Logic element usage by number of LUT inputs ;               ;
-;     -- 4 input functions                    ; 15            ;
-;     -- 3 input functions                    ; 14            ;
-;     -- <=2 input functions                  ; 13            ;
+;     -- 4 input functions                    ; 19            ;
+;     -- 3 input functions                    ; 11            ;
+;     -- <=2 input functions                  ; 15            ;
 ;                                             ;               ;
 ; Logic elements by mode                      ;               ;
-;     -- normal mode                          ; 38            ;
+;     -- normal mode                          ; 41            ;
 ;     -- arithmetic mode                      ; 4             ;
 ;                                             ;               ;
 ; Total registers                             ; 39            ;
 ;     -- Dedicated logic registers            ; 39            ;
 ;     -- I/O registers                        ; 0             ;
 ;                                             ;               ;
-; I/O pins                                    ; 48            ;
+; I/O pins                                    ; 47            ;
 ;                                             ;               ;
 ; Embedded Multiplier 9-bit elements          ; 0             ;
 ;                                             ;               ;
 ; Maximum fan-out node                        ; reset_n~input ;
 ; Maximum fan-out                             ; 32            ;
-; Total fan-out                               ; 309           ;
-; Average fan-out                             ; 1.75          ;
+; Total fan-out                               ; 317           ;
+; Average fan-out                             ; 1.78          ;
 +---------------------------------------------+---------------+
 
 
@@ -213,7 +213,7 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |SPI_SLAVE                 ; 42 (42)             ; 39 (39)                   ; 0           ; 0            ; 0       ; 0         ; 48   ; 0            ; |SPI_SLAVE          ; SPI_SLAVE   ; work         ;
+; |SPI_SLAVE                 ; 45 (45)             ; 39 (39)                   ; 0           ; 0            ; 0       ; 0         ; 47   ; 0            ; |SPI_SLAVE          ; SPI_SLAVE   ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -237,12 +237,11 @@ Encoding Type:  One-Hot
 +---------------------------------------+----------------------------------------+
 ; ram_addr[7]~reg0                      ; Stuck at GND due to stuck port data_in ;
 ; ram_addr[6]~reg0                      ; Stuck at GND due to stuck port data_in ;
-; dummy~reg0                            ; Stuck at VCC due to stuck port data_in ;
 ; tx_done                               ; Stuck at GND due to stuck port data_in ;
 ; lastAddrflag~reg0                     ; Stuck at GND due to stuck port data_in ;
 ; cyc_cnt[1]                            ; Stuck at GND due to stuck port data_in ;
 ; state~9                               ; Lost fanout                            ;
-; Total Number of Removed Registers = 7 ;                                        ;
+; Total Number of Removed Registers = 6 ;                                        ;
 +---------------------------------------+----------------------------------------+
 
 
@@ -266,7 +265,7 @@ Encoding Type:  One-Hot
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 19    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 24    ;
+; Number of registers using Clock Enable       ; 22    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -302,26 +301,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 48                          ;
+; boundary_port         ; 47                          ;
 ; cycloneiii_ff         ; 39                          ;
-;     CLR               ; 11                          ;
+;     CLR               ; 13                          ;
 ;     CLR SCLR          ; 1                           ;
 ;     ENA               ; 17                          ;
-;     ENA CLR           ; 2                           ;
 ;     ENA CLR SCLR      ; 5                           ;
 ;     plain             ; 3                           ;
-; cycloneiii_lcell_comb ; 44                          ;
+; cycloneiii_lcell_comb ; 46                          ;
 ;     arith             ; 4                           ;
 ;         2 data inputs ; 4                           ;
-;     normal            ; 40                          ;
-;         0 data inputs ; 2                           ;
+;     normal            ; 42                          ;
+;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 8                           ;
-;         3 data inputs ; 14                          ;
-;         4 data inputs ; 15                          ;
+;         2 data inputs ; 10                          ;
+;         3 data inputs ; 11                          ;
+;         4 data inputs ; 19                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.48                        ;
+; Average LUT depth     ; 1.56                        ;
 +-----------------------+-----------------------------+
 
 
@@ -330,7 +328,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -340,10 +338,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon Sep 09 00:33:22 2024
+    Info: Processing started: Mon Sep 09 15:40:12 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off spi_slave -c spi_slave
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Warning (10229): Verilog HDL Expression warning at spi_slave.sv(119): truncated literal to match 2 bits File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 119
 Info (12021): Found 1 design units, including 1 entities, in source file spi_slave.sv
     Info (12023): Found entity 1: SPI_SLAVE File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 7
 Warning (12019): Can't analyze file -- file ../register_rw.v is missing
@@ -354,44 +353,42 @@ Warning (10036): Verilog HDL or VHDL warning at spi_slave.sv(54): object "read_r
 Warning (10230): Verilog HDL assignment warning at spi_slave.sv(77): truncated value with size 9 to match size of target (8) File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 77
 Warning (10230): Verilog HDL assignment warning at spi_slave.sv(80): truncated value with size 32 to match size of target (3) File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 80
 Warning (10230): Verilog HDL assignment warning at spi_slave.sv(84): truncated value with size 32 to match size of target (24) File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 84
-Warning (10230): Verilog HDL assignment warning at spi_slave.sv(89): truncated value with size 32 to match size of target (24) File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 89
-Warning (10230): Verilog HDL assignment warning at spi_slave.sv(94): truncated value with size 32 to match size of target (24) File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 94
-Warning (10230): Verilog HDL assignment warning at spi_slave.sv(98): truncated value with size 16 to match size of target (1) File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 98
-Warning (10230): Verilog HDL assignment warning at spi_slave.sv(99): truncated value with size 32 to match size of target (3) File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 99
-Warning (10230): Verilog HDL assignment warning at spi_slave.sv(103): truncated value with size 32 to match size of target (5) File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 103
-Warning (10230): Verilog HDL assignment warning at spi_slave.sv(162): truncated value with size 32 to match size of target (2) File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 162
-Warning (10230): Verilog HDL assignment warning at spi_slave.sv(167): truncated value with size 32 to match size of target (24) File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 167
+Warning (10230): Verilog HDL assignment warning at spi_slave.sv(96): truncated value with size 32 to match size of target (24) File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 96
+Warning (10230): Verilog HDL assignment warning at spi_slave.sv(101): truncated value with size 32 to match size of target (24) File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 101
+Warning (10230): Verilog HDL assignment warning at spi_slave.sv(109): truncated value with size 32 to match size of target (3) File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 109
+Warning (10230): Verilog HDL assignment warning at spi_slave.sv(113): truncated value with size 32 to match size of target (5) File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 113
+Warning (10230): Verilog HDL assignment warning at spi_slave.sv(167): truncated value with size 32 to match size of target (2) File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 167
+Warning (10230): Verilog HDL assignment warning at spi_slave.sv(172): truncated value with size 32 to match size of target (24) File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 172
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "lastAddrflag" is stuck at GND File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 19
-    Warning (13410): Pin "ram_addr[6]" is stuck at GND File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 129
-    Warning (13410): Pin "ram_addr[7]" is stuck at GND File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 129
-    Warning (13410): Pin "dummy" is stuck at VCC File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 34
+    Warning (13410): Pin "ram_addr[6]" is stuck at GND File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 138
+    Warning (13410): Pin "ram_addr[7]" is stuck at GND File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 138
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 29 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "ram_data[0]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[1]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[2]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[3]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[4]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[5]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[6]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
-    Warning (15610): No output dependent on input pin "ram_data[7]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
+    Warning (15610): No output dependent on input pin "ram_data[8]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[9]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[10]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[11]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[12]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[13]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[14]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
-    Warning (15610): No output dependent on input pin "ram_data[15]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
+    Warning (15610): No output dependent on input pin "ram_data[16]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[17]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[18]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[19]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[20]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[21]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[22]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
-    Warning (15610): No output dependent on input pin "ram_data[23]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[24]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[25]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[26]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
@@ -400,14 +397,14 @@ Warning (21074): Design contains 29 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "ram_data[29]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[30]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
     Warning (15610): No output dependent on input pin "ram_data[31]" File: C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv Line: 23
-Info (21057): Implemented 103 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 104 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 37 input pins
-    Info (21059): Implemented 11 output pins
-    Info (21061): Implemented 55 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 48 warnings
-    Info: Peak virtual memory: 4745 megabytes
-    Info: Processing ended: Mon Sep 09 00:33:43 2024
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:36
+    Info (21059): Implemented 10 output pins
+    Info (21061): Implemented 57 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 47 warnings
+    Info: Peak virtual memory: 4749 megabytes
+    Info: Processing ended: Mon Sep 09 15:40:30 2024
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:31
 
 

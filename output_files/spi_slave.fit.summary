@@ -1,15 +1,15 @@
-Fitter Status : Successful - Mon Sep 09 00:33:53 2024
+Fitter Status : Successful - Mon Sep 09 15:40:39 2024
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : spi_slave
 Top-level Entity Name : SPI_SLAVE
 Family : Cyclone 10 LP
 Device : 10CL025YU256I7G
 Timing Models : Final
-Total logic elements : 53 / 24,624 ( < 1 % )
-    Total combinational functions : 42 / 24,624 ( < 1 % )
+Total logic elements : 55 / 24,624 ( < 1 % )
+    Total combinational functions : 45 / 24,624 ( < 1 % )
     Dedicated logic registers : 39 / 24,624 ( < 1 % )
 Total registers : 39
-Total pins : 48 / 151 ( 32 % )
+Total pins : 47 / 151 ( 31 % )
 Total virtual pins : 0
 Total memory bits : 0 / 608,256 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 132 ( 0 % )

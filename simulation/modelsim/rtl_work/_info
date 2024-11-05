@@ -11,24 +11,24 @@ cModel Technology
 Z0 dC:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/simulation/modelsim
 vSPI_SLAVE
 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-!s110 1725867398
+!s110 1725921694
 !i10b 1
-!s100 ;hmoDI6>M[FRTKeR4W`b03
+!s100 VHD`NH7U>:>kC3i2REbk12
 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IJl[i[lMMo^6JQYgEfMz9D3
+I21fNTHf7E2Y6eUM?^T]>c2
 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1725867398
+w1725921611
 8C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv
 FC:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv
 !i122 0
-L0 7 230
+L0 7 227
 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1725867398.000000
+!s108 1725921694.000000
 !s107 C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave|C:/Users/gene.li/OneDrive - General Fusion Inc/Documents/GitHub/FPGA/SPI_Slave/spi_slave.sv|
 !i113 1
